@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>ProtoErrDev</title>
+        <meta name="what are you doing in the code?" content="you are making this weird.">
+        <link rel="icon" href="https://lh3.googleusercontent.com/a-/AOh14Gj8NiA8oKBYn074Wx8QPQHORSyFKzHtj7Xn7Ak8gg=s600-k-no-rp-mo">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158027200-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-158027200-1');
+        </script>
+    </head>
+    <body>
+        <center>
+            <br><br>
+            <h1>PrototypError Development</h1>
+            <br>
+            <div id="loginbox">
+                <br><br><label for="fname">Username:</label>
+                <input type="text" id="fname" name="fname" style="color: #000000;">
+                <br><br>
+                <label for="lname">Password:</label>
+                <input type="text" id="lname" name="lname" style="color: #000000;">
+                <br><br>
+                <button id="btn" onclick="login()">Login</button>
+                <br><br>
+            </div>
+        </center>
+    </body>
+    <style>
+        * {
+            font-family: Sans-serif;
+            color: #ffffff;
+        }
+        
+        body {
+            background: #20202f;
+        }
+        
+        h1 {
+            font-size: 40px;
+        }
+
+        div {
+            background: #80808f;
+            width: 300;
+        }
+        
+        button {
+            background: #40404f;
+            border: none;
+            padding: 4px 12px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #60606f;
+        }
+    </style>
+    <script>
+        function login() {
+            const button = document.getElementById("btn");
+            button.disabled = true;
+            document.getElementById("btn").innerHTML = "Incorrect Username or Password";
+            document.getElementById("btn").style.color = "#dc3939";
+            setTimeout(function() {
+                button.disabled = false;
+                document.getElementById("btn").innerHTML = "Login";
+                document.getElementById("btn").style.color = "#ffffff";
+            }, 2000);
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</html>
