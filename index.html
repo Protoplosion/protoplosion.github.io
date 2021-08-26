@@ -28,6 +28,7 @@
                 <button id="btn" onclick="login()">Login</button>
                 <br><br>
             </div>
+            <h2 id="error"></h2>
         </center>
     </body>
     <style>
@@ -42,6 +43,11 @@
         
         h1 {
             font-size: 40px;
+        }
+
+        h2 {
+            font-size: 12;
+            color: #dc3939;
         }
 
         div {
@@ -66,12 +72,10 @@
         function login() {
             const button = document.getElementById("btn");
             button.disabled = true;
-            document.getElementById("btn").innerHTML = "Incorrect Username or Password";
-            document.getElementById("btn").style.color = "#dc3939";
+            document.getElementById("error").innerHTML = "Incorrect username or password";
             setTimeout(function() {
                 button.disabled = false;
-                document.getElementById("btn").innerHTML = "Login";
-                document.getElementById("btn").style.color = "#ffffff";
+                document.getElementById("error").innerHTML = "";
             }, 2000);
         }
 
