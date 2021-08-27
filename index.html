@@ -20,15 +20,15 @@
             <br>
             <div id="loginbox">
                 <br><br><label for="fname">Username:</label>
-                <input type="text" id="fname" name="fname" style="color: #000000;">
+                <input type="text" id="user" style="color: #000000;">
                 <br><br>
                 <label for="lname">Password:</label>
-                <input type="text" id="lname" name="lname" style="color: #000000;">
+                <input type="text" id="pass" style="color: #000000;">
                 <br><br>
                 <button id="btn" onclick="login()">Login</button>
                 <br><br>
             </div>
-            <h2 id="error"></h2>
+            <h2 id="err"></h2>
         </center>
     </body>
     <style>
@@ -70,12 +70,25 @@
     </style>
     <script>
         function login() {
-            const button = document.getElementById("btn");
-            button.disabled = true;
-            document.getElementById("error").innerHTML = "Incorrect username or password";
+            const user = document.getElementById("user");
+            const pass = document.getElementById("pass");
+            const btn = document.getElementById("btn");
+            const err = document.getElementById("err")
+            btn.disabled = true;
+            if (user.value == "cjohnson" && pass.value == "tier3") {
+                location.href = "https://youtu.be/dQw4w9WgXcQ";
+            } else if(user.value.length == 0 && pass.value.length == 0) {
+                err.innerHTML = "Please put in a username and password";
+            } else if(user.value.length == 0) {
+                err.innerHTML = "Please put in a username";
+            } else if(pass.value.length == 0) {
+                err.innerHTML = "Please put in a password";
+            } else {
+                err.innerHTML = "Incorrect username or password";
+            }
             setTimeout(function() {
-                button.disabled = false;
-                document.getElementById("error").innerHTML = "";
+                btn.disabled = false;
+                err.innerHTML = "";
             }, 2000);
         }
 
