@@ -19,7 +19,7 @@
     <body>
         <center>
             <br><br>
-            <h1><a href="https://prototyperror.netlify.app">PrototypError Development</a></h1>
+            <h1><a id="title" href="https://prototyperror.netlify.app">PrototypError Development</a></h1>
             <br>
             <div id="loginbox">
                 <br><br><label for="fname">Username:</label>
@@ -33,7 +33,7 @@
             </div>
             <h2 id="err"></h2>
         </center>
-        <a href="https://youtube.com/c/PrototypError">PrototypError Foundation</a>
+        <a id="foundation" href="https://youtube.com/c/PrototypError">PrototypError Foundation</a>
     </body>
     <style>
         * {
@@ -48,13 +48,17 @@
         h1 {
             font-size: 40px;
         }
+        
+        #title {
+            font-decoration: none;
+        }
 
         h2 {
             font-size: 12px;
             color: #dc3939;
         }
         
-        a {
+        #foundation {
             font-size: 12px;
             position: absolute;
             bottom: 8px;
