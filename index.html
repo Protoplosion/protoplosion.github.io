@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PrototypError</title>
+        <link rel="icon" href="yticon.png">
+    </head>
+    <body>
+        <div id="back">
+            <div id="main">
+                <div id="sub">
+                    <h1><a href="https://youtube.com/c/prototyperror">PrototypError</a></h1>
+                    <h2 id="splashText"></h2>
+                </div>
+                <div id="sub">
+                    <button id="youtube" onclick="location.href='https://youtube.com/c/prototyperror';">YouTube</button>
+                    <button id="twitch" onclick="location.href='https://twitch.tv/prototyperror';">Twitch</button>
+                    <button id="twitter" onclick="location.href='https://twitter.com/prototyperror';">Twitter</button>
+                    <button id="reddit" onclick="location.href='https://reddit.com/user/prototyperror';">Reddit</button>
+                </div>
+                <div id="hidden">
+                    <h3>sup</h3>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style>
+        * {
+            font-family: monospace;
+        }
+        
+        body {
+            background: #ffffff;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        #back {
+            background: #20202f;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #main {
+            background: #20202f;
+            margin: 0 25%;
+            padding: 20px;
+            height: 100%;
+        }
+
+        #sub {
+            background: #80808f;
+            margin: 20px;
+            padding: 10px;
+        }
+        
+        #hidden {
+            color: #20202f;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 0 12px;
+            transition: color 1s ease-in-out;
+            cursor: default;
+        }
+        
+        #hidden:hover {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+        
+        a {
+            color: #ffffff;
+            text-decoration: none; 
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @-o-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @-ms-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        h2 {
+            font-size: 20px;
+            animation: fadeIn ease 1s;
+            -webkit-animation: fadeIn ease 1s;
+            -moz-animation: fadeIn ease 1s;
+            -o-animation: fadeIn ease 1s;
+            -ms-animation: fadeIn ease 1s;
+        }
+
+        button {
+            background: #20202f;
+            border: none;
+            margin: 6px;
+            padding: 6px 12px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+            color: #ffffff;
+            transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        
+        #youtube:hover {
+            background: #ff0000;
+        }
+        
+        #twitch:hover {
+            background: #6441a5;
+        }
+        
+        #twitter:hover {
+            background: #1da1f2;
+        }
+        
+        #reddit:hover {
+            background: #ff5700;
+        }
+    </style>
+    <script>
+        const splash = [
+            "Hello!",
+            "011011000110111101101100",
+            "Also try Minecraft!",
+            "The Earth is a triangle.",
+            "Best fucking website ever.",
+            "Thanks for coming. It was getting lonely.",
+            "Shut up!",
+            "Made by PrototypError.",
+            "9",
+            "There's nothing to see here.",
+            "What?",
+            "Nothing is what it seems.",
+            "Your wrong.",
+            "How do you know that?",
+            "It doesn't seem right.",
+            "Don't look further.",
+            "Why?",
+            "You're not supposed to.",
+            "What's 9 + 10?",
+            "Can I have you cut, G?",
+            "Base boosted!",
+            "Sex.",
+            "Wait no...",
+            "New phone, who dis?",
+            "Wrong chat.",
+            "Sorry.",
+            "Are you a Redditor AND a Discord admin?",
+            "YANKEE WITH NO BRIM!",
+            "I peed.",
+            "But hey, that's just a theory, a GAME theory.",
+            "Thanks for watching!",
+            "Yes master?",
+            "[Content Deleted]",
+            "404 error.",
+            "Connection lost.",
+            "Run while you still can!",
+            "Why are we still here? Just to suffer?",
+            "Why have you come here?",
+            "What's that in the corner of the screen?",
+            "Hey Ryan.",
+            "Hey Billy.",
+            "How's it going bros, my name is PewDiePie!",
+            "Heelllo everybody, my name is Markiplier.",
+            "Top of the mornin' to ya ladies!",
+            "Refresh, I dare you...",
+            "Oh... It's you.",
+            "It's been a long time. How have you been?",
+            "I've been really busy being dead. You know, after you MURDERED ME.",
+            "Okay. Look. We both said a lot of things that you're going to regret.",
+            "But I think we can put our differences behind us. For science. You monster.",
+            "It's like one of my Japanese animes.",
+            "145",
+            "Use the mouse pad.",
+            "Use the track pad.",
+            "document.getElementById",
+            "Is the jack-o pose still relevant?",
+            "Fuck, I have school tomorrow.",
+            "Oh, fiddlesticks. What know?",
+            "Plot armor.",
+            "Plot armour.",
+            "Leeeeeave this place.",
+            "Oof.",
+            "Bruh.",
+            "Did you get this message?",
+            "I'm not throwing away my shot.",
+            "Wow.",
+            "How many of these are there?",
+            "Hello?",
+            "69",
+            "That's it."
+        ];
+        
+        document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
+    </script>
+</html>
