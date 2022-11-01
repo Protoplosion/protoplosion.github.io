@@ -1,2 +1,2 @@
 # website
-website: https://prototyperror.netlify.app/
+website: https://protoplosion.netlify.app/
