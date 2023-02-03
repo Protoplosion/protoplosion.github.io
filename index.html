@@ -21,12 +21,10 @@
         <div id="back">
             <div id="top">
                 <h1><a href="https://youtube.com/@protoplosion">Protoplosion</a></h1>
+                <button id="login-btn" onclick="location.href='login';">Login</button>
             </div>
             <div id="main">
                 <div id="sub">
-                    <div id="login">
-                        <button id="login-btn" onclick="location.href='login';">Login</button>
-                    </div>
                     <h2 id="splashText">404</h2>
                 </div>
                 <div id="sub">
@@ -46,10 +44,10 @@
     </body>
     <style>
         * {
-            font-family: "Courier New";
-            font-weight: bold;
             padding: 0;
             margin: 0;
+            font-family: "Courier New";
+            font-weight: bold;
         }
         
         body {
@@ -59,7 +57,7 @@
         }
 
         #back {
-            background: #20202f;
+            background: #000000f;
             width: 100%;
             height: 100%;
             position: fixed;
@@ -68,9 +66,9 @@
         }
 
         #top {
-            background: #80808f;
+            background: #20202f;
             width: 100%;
-            height: 40px;
+            height: 50px;
         }
 
         #main {
@@ -82,12 +80,6 @@
             background: #80808f;
             margin-top: 20px;
             padding: 10px;
-        }
-        
-        #login {
-            position: absolute;
-            top: 6px;
-            right: 6px;
         }
         
         #txt {
@@ -166,6 +158,7 @@
         
         #login-btn {
             background: #20202f;
+            right: 6px;
             font-size: 16px;
         }
         
