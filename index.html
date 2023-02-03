@@ -321,17 +321,19 @@
         
         document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
         
-        var txtFile = new XMLHttpRequest();
-        var allText = "";
-        txtFile.onreadystatechange = function () {
-            if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
-                allText = txtFile.responseText;
-                allText = allText.split("\n").join("<br>");
-            }
+        if (document.getElementById("splashText").innerHTML == "Yes master?") {
+            var txtFile = new XMLHttpRequest();
+            var allText = "";
+            txtFile.onreadystatechange = function () {
+                if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
+                    allText = txtFile.responseText;
+                    allText = allText.split("\n").join("<br>");
+                }
 
-            document.getElementById("txt").innerHTML = allText;
+                document.getElementById("txt").innerHTML = allText;
+            }
+            txtFile.open("GET", "waifu.txt", true);
+            txtFile.send(null);
         }
-        txtFile.open("GET", "waifu.txt", true);
-        txtFile.send(null);
     </script>
 </html>
