@@ -20,10 +20,10 @@
     <body>
         <div id="back">
             <div id="top">
-                <div id="sub-top">
+                <div id="top-center">
                     <h1><a href="https://youtube.com/@protoplosion">Protoplosion</a></h1>
                 </div>
-                <div id="sub-top">
+                <div id="top-right">
                     <button id="login-btn" onclick="location.href='login';">Login</button>
                 </div>
             </div>
@@ -73,8 +73,15 @@
             height: 50px;
         }
         
-        #sub-top {
+        #top-center {
             display: inline-block;
+            align: center;
+            height: 100%;
+        }
+        
+        #top-right {
+            display: inline-block;
+            align: right;
             height: 100%;
         }
 
