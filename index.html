@@ -33,11 +33,13 @@
                     <button id="twitter" onclick="location.href='https://twitter.com/protoplosion';">Twitter</button>
                     <button id="reddit" onclick="location.href='https://reddit.com/user/prototyperror';">Reddit</button>
                 </div>
+                <div id="text">
+                    <object data="waifu.txt"></object>
+                </div>
                 <div id="hidden">
                     <h3>sup</h3>
                 </div>
             </div>
-            <object data="waifu.txt"></object>
         </div
     </body>
     <style>
@@ -55,8 +57,8 @@
             background: #20202f;
             padding: 0;
             margin: 0;
-            height: 100%;
             width: 100%;
+            height: 100%;
             position: fixed;
             top: 0;
             left: 0;
@@ -79,6 +81,14 @@
             position: absolute;
             top: 6px;
             right: 6px;
+        }
+        
+        #text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
         
         #hidden {
@@ -188,8 +198,8 @@
         }
         
         object {
-            height: 100%;
             width: 100%;
+            height: 100%;
         }
     </style>
     <script>
