@@ -38,14 +38,16 @@
         }
 
         #center {
-            margin: auto;
+            margin: 0;
             width: 600px;
-            position: relative;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
 
         h1 {
             font-size: 40px;
-            position: relative;
         }
         
         #title {
@@ -69,7 +71,6 @@
             margin: auto;
             width: 50%;
             height: 100%;
-            position: absolute;
         }
         
         label {
