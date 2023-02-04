@@ -33,8 +33,9 @@
             </div>
         </div>
         <div id="hidden">
-            <h3>sup</h3>
+            <h3 onclick="sup()">sup</h3>
         </div>
+        <audio id="noise" autoplay loop><source src="noise.mp3" type="audio/mpeg"></audio>
     </body>
     <style>
         * {
@@ -86,7 +87,7 @@
         }
         
         #hidden {
-            color: #20202f;
+            color: #10101f;
             position: fixed;
             bottom: 10px;
             right: 10px;
@@ -310,9 +311,10 @@
             "There's 108 of the babies.",
             "That's it."
         ];
-        
+
         document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
-        
+
+
         if (document.getElementById("splashText").innerHTML == "Yes master?") {
             var txtFile = new XMLHttpRequest();
             var allText = "";
@@ -326,6 +328,18 @@
             }
             txtFile.open("GET", "waifu.txt", true);
             txtFile.send(null);
+        }
+
+
+        function sup() {
+            var noise = document.getElementById("noise");
+            noise.play();
+
+            let hue = 0;
+            setInterval(function() {
+                hue = Math.floor(Math.random() * 360);
+                document.body.style.backgroundColor = "hsl(" + hue + ", 100%, 50%)";
+            }, 100);
         }
     </script>
 </html>
