@@ -150,8 +150,7 @@ const SPEED_Z = 0.02; // rps
 const POINT3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
 
 // set up the canvas and context
-var canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
+var canvas = document.getElementById("render");
 var ctx = canvas.getContext("2d");
 
 // dimensions
