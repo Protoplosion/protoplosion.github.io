@@ -32,7 +32,7 @@ const splash = [
     "Thanks for watching!",
     "Yes master?",
     "[Content Deleted]",
-    "404 error.",
+    "404",
     "Connection lost.",
     "Run while you still can!",
     "Why are we still here? Just to suffer?",
