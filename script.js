@@ -203,7 +203,7 @@ Cube.prototype = {
 
 var context = document.querySelector("canvas").getContext("2d");
 var pointer = new Point2D(0, 0);
-var cube = new Cube(0, 0, 400, 200);
+var cube = new Cube(0, 0, 1000, 500);
 
 var height = document.documentElement.clientHeight;
 var width = document.documentElement.clientWidth;
@@ -212,7 +212,7 @@ function project(points3d, width, height) {
 
     var points2d = new Array(points3d.length);
 
-    var focal_length = 200;
+    var focal_length = 500;
 
     for (let index = points3d.length - 1; index > -1; -- index) {
         let p = points3d[index];
@@ -237,10 +237,10 @@ function loop() {
     context.fillStyle = "#10101f";
     context.fillRect(0, 0, width, height);
 
-    context.strokeStyle = "red";
+    context.strokeStyle = "white";
 
-    cube.rotateX(pointer.y * 0.0001);
-    cube.rotateY(-pointer.x * 0.0001);
+    cube.rotateX(pointer.y * 0.00015);
+    cube.rotateY(-pointer.x * 0.00015);
 
     context.fillStyle = "red";
 
