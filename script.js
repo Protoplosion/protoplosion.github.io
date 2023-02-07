@@ -111,21 +111,6 @@ const splash = [
 
 document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
 
-if (document.getElementById("splashText").innerHTML == "Yes master?") {
-    var txtFile = new XMLHttpRequest();
-    var allText = "";
-    txtFile.onreadystatechange = function () {
-        if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
-            allText = txtFile.responseText;
-            allText = allText.split("\n").join("<br>");
-        }
-        
-        document.getElementById("txt").innerHTML = allText;
-    }
-    txtFile.open("GET", "waifu.txt", true);
-    txtFile.send(null);
-}
-
 var supPressed = false;
 var hue = 0;
 function sup() {
@@ -205,6 +190,12 @@ var cube = new Cube(0, 0, 1000, 500);
 
 var height = document.documentElement.clientHeight;
 var width = document.documentElement.clientWidth;
+
+if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
+    var background = new Image();
+    background.src = "waifu.jpg";
+    context.drawImage(background, 0, 0);
+}
 
 function project(points3d, width, height) {
 
