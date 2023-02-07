@@ -6,7 +6,7 @@
 }
 
 body {
-    background: canvas(canvas);
+    background: canvas(render);
     background-attachment: fixed;
     text-align: center;
     color: #ffffff;
