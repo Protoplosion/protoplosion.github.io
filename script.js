@@ -32,7 +32,7 @@ const splash = [
     "Thanks for watching!",
     "Yes master?",
     "[Content Deleted]",
-    "404",
+    "404 Error.",
     "Connection lost.",
     "Run while you still can!",
     "Why are we still here? Just to suffer?",
@@ -132,15 +132,15 @@ var hue = 0;
 function sup() {
     if (!supPressed) {
         supPressed = true;
-        //var noise = document.getElementById("noise");
-        //noise.play();
+        var noise = document.getElementById("noise");
+        noise.play();
     }
 }
 if (supPressed) {
     hue += 1;
     if (hue >= 360) hue = 0;
     document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
-
+}
 
 const Point2D = function(x, y) { this.x = x; this.y = y; };
 const Point3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
