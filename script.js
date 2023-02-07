@@ -117,7 +117,7 @@ var splash = [
 
 splash[-2] = "There's " + (splash.length).toString() + " of these babies.";
 
-document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
+document.getElementById("splashText").innerHTML = splash[-2/*Math.round(Math.random() * (splash.length - 1))*/];
 
 var supPressed = false;
 var hue = 0;
@@ -231,7 +231,7 @@ function loop() {
 
     context.fillStyle = "#10101f";
     context.fillRect(0, 0, width, height);
-    if (document.getElementById("splashText").innerHTML == "Yes master?") context.drawImage(background, 0, 0);
+    if (true || document.getElementById("splashText").innerHTML == "Yes master?") context.drawImage(background, 0, 0);
 
     context.strokeStyle = "white";
 
