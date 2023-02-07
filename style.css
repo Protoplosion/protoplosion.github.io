@@ -19,9 +19,6 @@ body {
 }
 
 #canvas-background {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
