@@ -144,107 +144,157 @@ function sup() {
 }
 
 
-// constants
-const COLOR_BG = "#10101f";
-const COLOR_CUBE = "red";
-const SPEED_X = 0; // rps
-const SPEED_Y = 0.005; // rps
-const SPEED_Z = 0.01; // rps
-const POINT3D = function (x, y, z) { this.x = x; this.y = y; this.z = z; };
+const Point2D = function(x, y) { this.x = x; this.y = y; };
+const Point3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
+const Cube = function(x, y, z, size) {
+    Point3D.call(this, x, y, z);
 
-// set up the canvas and context
-var canvas = document.getElementById("canvas-background");
-var ctx = canvas.getContext("2d");
+    size *= 0.5;
 
-// dimensions
-var h = document.documentElement.clientHeight;
-var w = document.documentElement.clientWidth;
-canvas.height = h;
-canvas.width = w;
+    this.vertices = [
+        new Point3D(x - size, y - size, z - size),
+        new Point3D(x + size, y - size, z - size),
+        new Point3D(x + size, y + size, z - size),
+        new Point3D(x - size, y + size, z - size),
+        new Point3D(x - size, y - size, z + size),
+        new Point3D(x + size, y - size, z + size),
+        new Point3D(x + size, y + size, z + size),
+        new Point3D(x - size, y + size, z + size)
+    ];
 
-// colours and lines
-ctx.fillStyle = COLOR_BG;
-ctx.strokeStyle = COLOR_CUBE;
-ctx.lineWidth = w / 100;
-ctx.lineCap = "round";
+    this.faces = [
+        [0, 1, 2, 3],
+        [0, 4, 5, 1],
+        [1, 5, 6, 2],
+        [3, 2, 6, 7],
+        [0, 3, 7, 4],
+        [4, 7, 6, 5]
+    ];
+};
 
-// cube parameters
-var cx = w / 2;
-var cy = h / 2;
-var cz = 0;
-var size = h / 4;
-var vertices = [
-    new POINT3D(cx - size, cy - size, cz - size),
-    new POINT3D(cx + size, cy - size, cz - size),
-    new POINT3D(cx + size, cy + size, cz - size),
-    new POINT3D(cx - size, cy + size, cz - size),
-    new POINT3D(cx - size, cy - size, cz + size),
-    new POINT3D(cx + size, cy - size, cz + size),
-    new POINT3D(cx + size, cy + size, cz + size),
-    new POINT3D(cx - size, cy + size, cz + size)
-];
-var edges = [
-    [0, 1], [1, 2], [2, 3], [3, 0], // back face
-    [4, 5], [5, 6], [6, 7], [7, 4], // front face
-    [0, 4], [1, 5], [2, 6], [3, 7] // connecting sides
-];
+Cube.prototype = {
+    rotateX:function(radian) {
+        var cosine = Math.cos(radian);
+        var sine   = Math.sin(radian);
 
-// set up the animation loop
-var timeDelta, timeLast = 0;
-requestAnimationFrame(loop);
+        for (let index = this.vertices.length - 1; index > -1; -- index) {
+            let p = this.vertices[index];
 
-function loop(timeNow) {
+            let y = (p.y - this.y) * cosine - (p.z - this.z) * sine;
+            let z = (p.y - this.y) * sine + (p.z - this.z) * cosine;
 
-    // calculate the time difference
-    timeDelta = timeNow - timeLast;
-    timeLast = timeNow;
+            p.y = y + this.y;
+            p.z = z + this.z;
+        }
+    },
+    rotateY:function(radian) {
+        var cosine = Math.cos(radian);
+        var sine   = Math.sin(radian);
 
-    // background
-    ctx.fillRect(0, 0, w, h);
-
-    // rotate the cube along the z axis
-    let angle = timeDelta * 0.001 * SPEED_Z * Math.PI * 2;
-    for (let v of vertices) {
-        let dx = v.x - cx;
-        let dy = v.y - cy;
-        let x = dx * Math.cos(angle) - dy * Math.sin(angle);
-        let y = dx * Math.sin(angle) + dy * Math.cos(angle);
-        v.x = x + cx;
-        v.y = y + cy;
+        for (let index = this.vertices.length - 1; index > -1; -- index) {
+            let p = this.vertices[index];
+            let x = (p.z - this.z) * sine + (p.x - this.x) * cosine;
+            let z = (p.z - this.z) * cosine - (p.x - this.x) * sine;
+            p.x = x + this.x;
+            p.z = z + this.z;
+        }
     }
+};
 
-    // rotate the cube along the x axis
-    angle = timeDelta * 0.001 * SPEED_X * Math.PI * 2;
-    for (let v of vertices) {
-        let dy = v.y - cy;
-        let dz = v.z - cz;
-        let y = dy * Math.cos(angle) - dz * Math.sin(angle);
-        let z = dy * Math.sin(angle) + dz * Math.cos(angle);
-        v.y = y + cy;
-        v.z = z + cz;
+var context = document.querySelector("canvas").getContext("2d");
+var pointer = new Point2D(0, 0);
+var cube = new Cube(0, 0, 400, 200);
+
+var height = document.documentElement.clientHeight;
+var width = document.documentElement.clientWidth;
+
+function project(points3d, width, height) {
+
+    var points2d = new Array(points3d.length);
+
+    var focal_length = 200;
+
+    for (let index = points3d.length - 1; index > -1; -- index) {
+        let p = points3d[index];
+
+        let x = p.x * (focal_length / p.z) + width * 0.5;
+        let y = p.y * (focal_length / p.z) + height * 0.5;
+
+        points2d[index] = new Point2D(x, y);
     }
-
-    // rotate the cube along the y axis
-    angle = timeDelta * 0.001 * SPEED_Y * Math.PI * 2;
-    for (let v of vertices) {
-        let dx = v.x - cx;
-        let dz = v.z - cz;
-        let x = dz * Math.sin(angle) + dx * Math.cos(angle);
-        let z = dz * Math.cos(angle) - dx * Math.sin(angle);
-        v.x = x + cx;
-        v.z = z + cz;
-    }
-
-    // draw each edge
-    for (let edge of edges) {
-        ctx.beginPath();
-        ctx.moveTo(vertices[edge[0]].x, vertices[edge[0]].y);
-        ctx.lineTo(vertices[edge[1]].x, vertices[edge[1]].y);
-        ctx.stroke();
-    }
-
-    // call the next frame
-    requestAnimationFrame(loop);
+    return points2d;
 }
+
+function loop() {
+    window.requestAnimationFrame(loop);
+
+    height = document.documentElement.clientHeight;
+    width = document.documentElement.clientWidth;
+
+    context.canvas.height = height;
+    context.canvas.width  = width;
+
+    context.fillStyle = "#10101f";
+    context.fillRect(0, 0, width, height);
+
+    context.strokeStyle = "red";
+
+    cube.rotateX(pointer.y * 0.0001);
+    cube.rotateY(-pointer.x * 0.0001);
+
+    context.fillStyle = "red";
+
+    var vertices = project(cube.vertices, width, height);
+
+    for (let index = cube.faces.length - 1; index > -1; -- index) {
+
+        let face = cube.faces[index];
+
+        let p1 = cube.vertices[face[0]];
+        let p2 = cube.vertices[face[1]];
+        let p3 = cube.vertices[face[2]];
+
+        let v1 = new Point3D(p2.x - p1.x, p2.y - p1.y, p2.z - p1.z);
+        let v2 = new Point3D(p3.x - p1.x, p3.y - p1.y, p3.z - p1.z);
+
+        let n  = new Point3D(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x);
+
+        if (-p1.x * n.x + -p1.y * n.y + -p1.z * n.z <= 0) {
+            context.beginPath();
+            context.moveTo(vertices[face[0]].x, vertices[face[0]].y);
+            context.lineTo(vertices[face[1]].x, vertices[face[1]].y);
+            context.lineTo(vertices[face[2]].x, vertices[face[2]].y);
+            context.lineTo(vertices[face[3]].x, vertices[face[3]].y);
+            context.closePath();
+            context.fill();
+            context.stroke();
+        }
+    }
+}
+loop();
+(function() {
+    document.onmousemove = handleMouseMove;
+    function handleMouseMove(event) {
+        var eventDoc, doc, body;
+
+        event = event || window.event;
+        
+        if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            event.pageX = event.clientX +
+            (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+            (doc && doc.clientLeft || body && body.clientLeft || 0);
+            event.pageY = event.clientY +
+            (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+            (doc && doc.clientTop  || body && body.clientTop  || 0 );
+        }
+
+        pointer.x = event.pageX - width * 0.5;
+        pointer.y = event.pageY - height * 0.5;
+    }
+})();
 
 document.body.style.background = 'url(' + canvas.toDataURL() + ')';
