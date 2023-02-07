@@ -6,6 +6,7 @@
 }
 
 body {
+    background: canvas(canvas);
     text-align: center;
     color: #ffffff;
     margin: 0;
