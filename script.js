@@ -225,7 +225,7 @@ function loop() {
     context.canvas.height = height;
     context.canvas.width  = width;
     
-    if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
+    if (document.getElementById("splashText").innerHTML == "Yes master?") {
         document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')";
         document.getElementById("canvas-background").style.backgroundSize = "cover";
         document.getElementById("canvas-background").style.backgroundRepeat = "no-repeat";
