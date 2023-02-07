@@ -132,8 +132,8 @@ var hue = 0;
 function sup() {
     if (!supPressed) {
         supPressed = true;
-        var noise = document.getElementById("noise");
-        noise.play();
+        //var noise = document.getElementById("noise");
+        //noise.play();
     }
 }
 if (supPressed) {
