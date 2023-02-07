@@ -115,7 +115,7 @@ var splash = [
     "That's it."
 ];
 
-splash[splash.length - 1] = "There's " + (splash.length).toString() + " of the babies.";
+splash[-1] = "There's " + (splash.length).toString() + " of these babies.";
 
 document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
 
