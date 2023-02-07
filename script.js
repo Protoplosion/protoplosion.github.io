@@ -134,12 +134,12 @@ function sup() {
         supPressed = true;
         var noise = document.getElementById("noise");
         noise.play();
+        setInterval(function () {
+            hue += 1;
+            if (hue >= 360) hue = 0;
+            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
+        }, 100);
     }
-}
-if (supPressed) {
-    hue += 1;
-    if (hue >= 360) hue = 0;
-    document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
 }
 
 const Point2D = function(x, y) { this.x = x; this.y = y; };
