@@ -1,4 +1,4 @@
-const splash = [
+var splash = [
     "Hello!",
     "011011000110111101101100",
     "Also try Minecraft!",
@@ -112,9 +112,11 @@ const splash = [
     "Was that the bite of \'87?!",
     "Bro went to Brazil.💀",
     "She is such a bad bitch though.",
-    "There's " + (splash.length - 1).toString() + " of the babies.",
+    "...",
     "That's it."
 ];
+
+splash[splash.length - 1] = "There's " + (splash.length).toString() + " of the babies.";
 
 document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
 
