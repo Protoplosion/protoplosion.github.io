@@ -127,17 +127,20 @@ if (document.getElementById("splashText").innerHTML == "Yes master?") {
     txtFile.send(null);
 }
 
-
+var supPressed = false;
 function sup() {
-    var noise = document.getElementById("noise");
-    noise.play();
-    
-    let hue = 0;
-    setInterval(function() {
-        hue += 10;
-        if (hue >= 360) hue = 0;
-        document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
-    }, 1);
+    if (!supPressed) {
+        supPressed = true;
+        var noise = document.getElementById("noise");
+        noise.play();
+
+        let hue = 0;
+        setInterval(function () {
+            hue += 10;
+            if (hue >= 360) hue = 0;
+            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
+        }, 1);
+    }
 }
 
 
@@ -147,7 +150,7 @@ const COLOR_CUBE = "red";
 const SPEED_X = 0; // rps
 const SPEED_Y = 0.01; // rps
 const SPEED_Z = 0.02; // rps
-const POINT3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
+const POINT3D = function (x, y, z) { this.x = x; this.y = y; this.z = z; };
 
 // set up the canvas and context
 var canvas = document.getElementById("canvas-background");
