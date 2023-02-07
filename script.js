@@ -150,8 +150,7 @@ const SPEED_Z = 0.02; // rps
 const POINT3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
 
 // set up the canvas and context
-var canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
+var canvas = document.getElementById("canvas-background");
 var ctx = canvas.getContext("2d");
 
 // dimensions
@@ -245,6 +244,4 @@ function loop(timeNow) {
     requestAnimationFrame(loop);
 }
 
-var ctx2 = document.getCSSCanvasContext("2d", "render");
-ctx2.globalAlpha = 0.5;
-ctx2.drawImage(canvas, 0, 0);
+document.body.style.background = 'url(' + canvas.toDataURL() + ')';
