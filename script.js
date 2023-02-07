@@ -231,7 +231,11 @@ function loop() {
 
     context.fillStyle = "#10101f";
     context.fillRect(0, 0, width, height);
-    if (true || document.getElementById("splashText").innerHTML == "Yes master?") context.drawImage(background, 0, 0);
+    if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
+        canvas.style.backgroundImage = "url('waifu.jpg')";
+        canvas.style.backgroundSize = "cover";
+        canvas.style.backgroundRepeat = "no-repeat";
+    }
 
     context.strokeStyle = "white";
 
