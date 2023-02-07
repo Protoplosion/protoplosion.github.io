@@ -199,10 +199,6 @@ var cube = new Cube(0, 0, 1000, 500);
 var height = document.documentElement.clientHeight;
 var width = document.documentElement.clientWidth;
 
-
-var background = new Image();
-background.src = "waifu.jpg";
-
 function project(points3d, width, height) {
 
     var points2d = new Array(points3d.length);
@@ -232,9 +228,9 @@ function loop() {
     context.fillStyle = "#10101f";
     context.fillRect(0, 0, width, height);
     if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
-        canvas.style.backgroundImage = "url('waifu.jpg')";
-        canvas.style.backgroundSize = "cover";
-        canvas.style.backgroundRepeat = "no-repeat";
+        getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')";
+        getElementById("canvas-background").style.backgroundSize = "cover";
+        getElementById("canvas-background").style.backgroundRepeat = "no-repeat";
     }
 
     context.strokeStyle = "white";
