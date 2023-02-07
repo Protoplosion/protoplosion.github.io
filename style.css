@@ -12,7 +12,7 @@ body {
 }
 
 canvas {
-    display: fixed;
+    display: block;
 }
 
 #top {
