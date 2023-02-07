@@ -138,7 +138,7 @@ function sup() {
             hue += 1;
             if (hue >= 360) hue = 0;
             document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
-        }, 100);
+        }, 10);
     }
 }
 
