@@ -224,13 +224,14 @@ function loop() {
 
     context.canvas.height = height;
     context.canvas.width  = width;
-
-    context.fillStyle = "#10101f";
-    context.fillRect(0, 0, width, height);
+    
     if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
         document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')";
         document.getElementById("canvas-background").style.backgroundSize = "cover";
         document.getElementById("canvas-background").style.backgroundRepeat = "no-repeat";
+    } else {
+        context.fillStyle = "#10101f";
+        context.fillRect(0, 0, width, height);
     }
 
     context.strokeStyle = "white";
