@@ -245,6 +245,6 @@ function loop(timeNow) {
     requestAnimationFrame(loop);
 }
 
-var ctx2 = document.getCSSCanvasContext("2d", "canvas");
+var ctx2 = document.getCSSCanvasContext("2d", "render");
 ctx2.globalAlpha = 0.5;
 ctx2.drawImage(canvas, 0, 0);
