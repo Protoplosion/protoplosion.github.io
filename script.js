@@ -241,8 +241,12 @@ function loop() {
 
     cube.rotateX(pointer.y * 0.00015);
     cube.rotateY(-pointer.x * 0.00015);
-
-    context.fillStyle = "red";
+    
+    if (supPressed) {
+        context.fillStyle = "hsl(" + hue + ", 100%, 50%)";
+    } else {
+        context.fillStyle = "red";
+    }
 
     var vertices = project(cube.vertices, width, height);
 
