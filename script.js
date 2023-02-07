@@ -128,13 +128,13 @@ if (document.getElementById("splashText").innerHTML == "Yes master?") {
 }
 
 var supPressed = false;
+var hue = 0;
 function sup() {
     if (!supPressed) {
         supPressed = true;
         var noise = document.getElementById("noise");
         noise.play();
 
-        let hue = 0;
         setInterval(function () {
             hue += 10;
             if (hue >= 360) hue = 0;
