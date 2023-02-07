@@ -134,7 +134,8 @@ function sup() {
         supPressed = true;
         var noise = document.getElementById("noise");
         noise.play();
-
+    }
+}
 if (supPressed) {
     hue += 1;
     if (hue >= 360) hue = 0;
