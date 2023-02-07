@@ -45,6 +45,7 @@ body {
 }
 
 #main {
+    position: fixed;
     margin: 0 20%;
     padding-top: 50px;
     height: 100%;
