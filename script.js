@@ -148,8 +148,8 @@ function sup() {
 const COLOR_BG = "#10101f";
 const COLOR_CUBE = "red";
 const SPEED_X = 0; // rps
-const SPEED_Y = 0.01; // rps
-const SPEED_Z = 0.02; // rps
+const SPEED_Y = 0.005; // rps
+const SPEED_Z = 0.01; // rps
 const POINT3D = function (x, y, z) { this.x = x; this.y = y; this.z = z; };
 
 // set up the canvas and context
