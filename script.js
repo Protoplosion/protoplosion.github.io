@@ -191,11 +191,9 @@ var cube = new Cube(0, 0, 1000, 500);
 var height = document.documentElement.clientHeight;
 var width = document.documentElement.clientWidth;
 
-if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
-    var background = new Image();
-    background.src = "waifu.jpg";
-    context.drawImage(background, 0, 0);
-}
+
+var background = new Image();
+background.src = "waifu.jpg";
 
 function project(points3d, width, height) {
 
@@ -225,6 +223,7 @@ function loop() {
 
     context.fillStyle = "#10101f";
     context.fillRect(0, 0, width, height);
+    if (document.getElementById("splashText").innerHTML == "Yes master?") context.drawImage(background, 0, 0);
 
     context.strokeStyle = "white";
 
