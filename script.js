@@ -117,7 +117,7 @@ var splash = [
 
 splash[-2] = "There's " + (splash.length).toString() + " of these babies.";
 
-document.getElementById("splashText").innerHTML = splash[-2/*Math.round(Math.random() * (splash.length - 1))*/];
+document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
 
 var supPressed = false;
 var hue = 0;
@@ -228,9 +228,9 @@ function loop() {
     context.fillStyle = "#10101f";
     context.fillRect(0, 0, width, height);
     if (true || document.getElementById("splashText").innerHTML == "Yes master?") {
-        getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')";
-        getElementById("canvas-background").style.backgroundSize = "cover";
-        getElementById("canvas-background").style.backgroundRepeat = "no-repeat";
+        document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')";
+        document.getElementById("canvas-background").style.backgroundSize = "cover";
+        document.getElementById("canvas-background").style.backgroundRepeat = "no-repeat";
     }
 
     context.strokeStyle = "white";
