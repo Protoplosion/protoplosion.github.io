@@ -34,7 +34,7 @@ body {
     transition: height 0.5s ease;
 }
 
-#title:hover #top {
+img:hover #top {
     height: 100%;
 }
 
