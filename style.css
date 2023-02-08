@@ -34,7 +34,7 @@ body {
     transition: height 0.5s ease;
 }
 
-#top:hover {
+#title:hover #top {
     height: 100%;
 }
 
@@ -47,7 +47,7 @@ body {
 }
 
 #login {
-    position: relative;
+    position: fixed;
     height: 100%;
     top: 5px;
     right: 5px;
