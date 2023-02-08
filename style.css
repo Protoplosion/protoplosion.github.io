@@ -28,7 +28,6 @@ body {
 
 #top {
     background: #20202f;
-    margin: 0;
     position: relative;
     width: 100%;
     height: 50px;
@@ -54,7 +53,6 @@ body {
 #main {
     position: relative;
     margin: 0 20%;
-    padding-top: 50px;
     height: 100%;
 }
 
@@ -80,10 +78,6 @@ body {
 
 #hidden:hover {
     color: #ffffff;
-}
-
-img {
-    height: 100%;
 }
 
 h1 {
