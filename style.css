@@ -40,7 +40,8 @@ body {
 
 #title {
     height: 50px;
-    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
 }
 
 #login {
