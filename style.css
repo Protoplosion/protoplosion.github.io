@@ -6,8 +6,9 @@
 }
 
 body {
+    background: #ff0000;
     text-align: center;
-    color: #ff0000;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -16,8 +17,8 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 60;
+    animation: fadeInAnimation ease 60s;
+    animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
