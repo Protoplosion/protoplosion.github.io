@@ -34,8 +34,8 @@ body {
     transition: height 0.5s ease;
 }
 
-#login-btn:hover #top {
-    height: 100px;
+#top:hover {
+    height: 100%;
 }
 
 #title {
