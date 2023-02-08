@@ -34,7 +34,7 @@ body {
     transition: height 0.5s ease;
 }
 
-#login-btn:hover > div#top {
+#login-btn:hover #top {
     height: 100%;
 }
 
