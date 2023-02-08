@@ -73,10 +73,6 @@ body {
     padding: 10px;
 }
 
-#field {
-    height: 100%;
-}
-
 #hidden {
     color: #10101f;
     position: fixed;
