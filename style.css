@@ -6,8 +6,7 @@
 }
 
 body {
-    background: #ff0000;
-    background-image: url(vignette.png);
+    background: url("vignette.png"), #ff0000;
     background-size: 100% 100%;
     text-align: center;
     color: #ffffff;
