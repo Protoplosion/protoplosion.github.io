@@ -98,8 +98,8 @@ img {
 p {
     color: #10101f;
     margin: 10px;
-    font-size: 11px;
-    test-align: left;
+    font-size: 8px;
+    text-align: left;
 }
 
 a {
