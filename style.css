@@ -28,7 +28,7 @@ body {
 
 #top {
     background: #20202f;
-    position: fixed;
+    position: relative;
     width: 100%;
     height: 50px;
     transition: height 0.5s ease;
@@ -41,7 +41,6 @@ body {
 #title {
     height: 50px;
     vertical-align: bottom;
-    display: table-cell;
 }
 
 #login {
