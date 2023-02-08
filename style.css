@@ -39,8 +39,9 @@ body {
 }
 
 #title {
-    vertical-align: bottom;
     height: 50px;
+    vertical-align: bottom;
+    display: table-cell;
 }
 
 #login {
