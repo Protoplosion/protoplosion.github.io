@@ -96,7 +96,9 @@ img {
 }
 
 p {
+    margin: 10px;
     font-size: 11px;
+    test-align: left;
 }
 
 a {
