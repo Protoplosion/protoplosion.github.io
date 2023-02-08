@@ -34,6 +34,10 @@ body {
     transition: height 1s ease-in-out;
 }
 
+#login:hover + #top {
+    height: 100%;
+}
+
 #title {
     vertical-align: bottom;
     height: 50px;
@@ -44,10 +48,6 @@ body {
     height: 100%;
     top: 5px;
     right: 5px;
-}
-
-#login:hover #top {
-    height: 100%;
 }
 
 #main {
