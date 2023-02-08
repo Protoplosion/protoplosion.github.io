@@ -8,9 +8,6 @@
 body {
     background-color: #ff0000;
     background-image: url("vignette.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     text-align: center;
     color: #ffffff;
     margin: 0;
