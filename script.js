@@ -298,9 +298,6 @@ loop();
     }
 })();
 
-document.body.style.background = 'url(' + canvas.toDataURL() + ')';
-
-
 const w = canvas.width = document.body.offsetWidth
 const h = canvas.height = document.body.offsetHeight
 
@@ -329,3 +326,5 @@ setInterval (() => {
       else ypos[ind] = y + 20
     });
 }, 50)
+
+document.body.style.background = 'url(' + canvas.toDataURL() + ')';
