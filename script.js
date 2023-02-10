@@ -299,3 +299,33 @@ loop();
 })();
 
 document.body.style.background = 'url(' + canvas.toDataURL() + ')';
+
+
+const w = canvas.width = document.body.offsetWidth
+const h = canvas.height = document.body.offsetHeight
+
+context.fillStyle = "#000"
+context.fillRect(0, 0, w, h)
+
+const cols = Math.floor(w / 20) + 1
+const ypos = Array(cols).fill(0)
+
+const chars = "PpRrOoTtLlSsIiNn"
+
+setInterval (() => {
+    context.fillStyle = "#0001"
+    context.fillRect(0, 0, w, h)
+  
+    context.fillStyle = "#0f0"
+    context.font = "15pt monospace"
+  
+    ypos.forEach((y, ind) => {
+      const char = chars[Math.floor(Math.random() * chars.length)]
+  
+      const x = ind * 20
+      context.fillText(char, x, y)
+  
+      if (y > 100 + Math.random() * 10000) ypos[ind] = 0
+      else ypos[ind] = y + 20
+    });
+}, 50)
