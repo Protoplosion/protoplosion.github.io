@@ -299,4 +299,4 @@ loop();
     }
 })();
 
-document.body.style.background = 'url(' + canvas.toDataURL() + ')';
+//document.body.style.background = 'url(' + canvas.toDataURL() + ')';
