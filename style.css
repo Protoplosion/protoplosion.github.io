@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #000000ff;
+    background-color: #ff0000;
     background-image: url("vignette.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,7 +21,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    animation: fadeInAnimation ease 3s;
+    animation: fadeInAnimation ease 36s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
