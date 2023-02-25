@@ -111,11 +111,15 @@ var splash = [
     "Was that the bite of \'87?!",
     "Bro went to Brazil.💀",
     "She is such a bad bitch though.",
+    "Star light, star bright,",
+    "First star I see tonight,",
+    "I wish I may, I wish I might,",
+    "Have this wish I wish tonight.",
     "...",
     "That's it."
 ];
 
-splash[-2] = "There's " + (splash.length).toString() + " of these babies.";
+splash[-2] = "There's " + splash.length.toString() + " of these babies.";
 
 document.getElementById("splashText").innerHTML = splash[Math.round(Math.random() * (splash.length - 1))];
 
