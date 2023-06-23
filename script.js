@@ -255,7 +255,7 @@ function loop() {
     for (let index = cube.faces.length - 1; index > -1; -- index) {
 
         let face = cube.faces[index];
-
+        
         let p1 = cube.vertices[face[0]];
         let p2 = cube.vertices[face[1]];
         let p3 = cube.vertices[face[2]];
@@ -276,6 +276,35 @@ function loop() {
             context.stroke();
         }
     }
+    
+    const w = canvas.width = document.body.offsetWidth
+    const h = canvas.height = document.body.offsetHeight
+    
+    context.fillStyle = "#000"
+    context.fillRect(0, 0, w, h)
+    
+    const cols = Math.floor(w / 20) + 1
+    const ypos = Array(cols).fill(0)
+    
+    const chars = "PROTOPLOSION"
+    
+    setInterval (() => {
+        context.fillStyle = "#0001"
+        context.fillRect(0, 0, w, h)
+      
+        context.fillStyle = "#0f0"
+        context.font = "15pt monospace"
+      
+        ypos.forEach((y, ind) => {
+          const char = chars[Math.floor(Math.random() * chars.length)]
+      
+          const x = ind * 20
+          context.fillText(char, x, y)
+      
+          if (y > 100 + Math.random() * 10000) ypos[ind] = 0
+          else ypos[ind] = y + 20
+        });
+    }, 50)
 }
 loop();
 (function() {
@@ -302,34 +331,5 @@ loop();
         pointer.y = event.pageY - height * 0.5;
     }
 })();
-
-const w = canvas.width = document.body.offsetWidth
-const h = canvas.height = document.body.offsetHeight
-
-context.fillStyle = "#000"
-context.fillRect(0, 0, w, h)
-
-const cols = Math.floor(w / 20) + 1
-const ypos = Array(cols).fill(0)
-
-const chars = "PROTOPLOSION"
-
-setInterval (() => {
-    context.fillStyle = "#0001"
-    context.fillRect(0, 0, w, h)
-  
-    context.fillStyle = "#0f0"
-    context.font = "15pt monospace"
-  
-    ypos.forEach((y, ind) => {
-      const char = chars[Math.floor(Math.random() * chars.length)]
-  
-      const x = ind * 20
-      context.fillText(char, x, y)
-  
-      if (y > 100 + Math.random() * 10000) ypos[ind] = 0
-      else ypos[ind] = y + 20
-    });
-}, 50)
 
 //document.body.style.background = 'url(' + canvas.toDataURL() + ')';
