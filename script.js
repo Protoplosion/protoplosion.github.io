@@ -303,4 +303,47 @@ loop();
     }
 })();
 
+const title = "Protoplosion"
+let count = 0
+
+if (document.getElementById("title").innerHTML == title) clearInterval(titleWrite)
+
+let titleSet
+if (!titleSet) {
+    titleSet = true
+    var titleWrite = setInterval (() => {
+        document.getElementById("title").innerHTML += title.charAt(count)
+        count++
+    }, 100)
+}
+
+//const w = canvas.width = document.body.offsetWidth
+//const h = canvas.height = document.body.offsetHeight
+
+ctx.fillStyle = "#000"
+ctx.fillRect(0, 0, w, h)
+
+const cols = Math.floor(w / 20) + 1
+const ypos = Array(cols).fill(0)
+
+const chars = title
+
+setInterval (() => {
+    ctx.fillStyle = "#0001"
+    ctx.fillRect(0, 0, w, h)
+  
+    ctx.fillStyle = "#0f0"
+    ctx.font = "15pt monospace"
+  
+    ypos.forEach((y, ind) => {
+      const char = chars[Math.floor(Math.random() * chars.length)]
+  
+      const x = ind * 20
+      ctx.fillText(char, x, y)
+  
+      if (y > 100 + Math.random() * 10000) ypos[ind] = 0
+      else ypos[ind] = y + 20
+    });
+}, 50)
+
 //document.body.style.background = 'url(' + canvas.toDataURL() + ')';
