@@ -150,11 +150,8 @@ if (!supPressed) {
     noise.play()
     setInterval(function () {
         hue += 1
-        if (hue >= 360)
-            hue = 0
-            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
-        }, 10)
-    }
+        document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
+    }, 10)
 }
 
 
