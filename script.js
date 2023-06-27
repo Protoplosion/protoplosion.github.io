@@ -149,7 +149,7 @@ function sup() {
         var noise = document.getElementById("noise")
         noise.play()
         setInterval(function () {
-            hue = Math.round(Math.random() * 359)
+            hue++
             document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
         }, 10)
     }
