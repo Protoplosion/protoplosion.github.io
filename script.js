@@ -165,29 +165,20 @@ const context = canvas.getContext("2d")
 const w = canvas.width = document.body.offsetWidth
 const h = canvas.height = document.body.offsetHeight
 
-context.fillStyle = "#000"
+context.fillStyle = "#10101f"
 context.fillRect(0, 0, w, h)
 
 const cols = Math.floor(w / 20) + 1
 const ypos = Array(cols).fill(0)
 
-const chars = title
+const chars = splash
 
 setInterval (() => {
-    context.fillStyle = "#0001"
+    context.fillStyle = "#10101f1"
     context.fillRect(0, 0, w, h)
     
     context.fillStyle = "#0f0"
     context.font = "15pt monospace"
-    
-    if (document.getElementById("splashText").innerHTML == "Yes master?") {
-        document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')"
-        document.getElementById("canvas-background").style.backgroundSize = "cover"
-        document.getElementById("canvas-background").style.backgroundRepeat = "no-repeat"
-    } else {
-        context.fillStyle = "#10101f"
-        context.fillRect(0, 0, width, height)
-    }
     
     ypos.forEach((y, ind) => {
         const char = chars[Math.floor(Math.random() * chars.length)]
