@@ -144,14 +144,15 @@ if (!splashSet) {
 var supPressed = false
 var hue = 0
 function sup() {
-if (!supPressed) {
-    supPressed = true
-    var noise = document.getElementById("noise")
-    noise.play()
-    setInterval(function () {
-        hue += 1
-        document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
-    }, 10)
+    if (!supPressed) {
+        supPressed = true
+        var noise = document.getElementById("noise")
+        noise.play()
+        setInterval(function () {
+            hue += 1
+            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
+        }, 10)
+    }
 }
 
 
