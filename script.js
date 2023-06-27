@@ -138,9 +138,8 @@ if (!splashSet) {
     var splashWrite = setInterval (() => {
         document.getElementById("splashText").innerHTML += splash.charAt(count)
         count++
-    }, 100)
+    }, 50)
 }
-document.getElementById("splashText").innerHTML = splash
 
 var supPressed = false
 var hue = 0
@@ -174,7 +173,7 @@ const ypos = Array(cols).fill(0)
 const chars = splash
 
 setInterval (() => {
-    context.fillStyle = "#10101f1"
+    context.fillStyle = "#10101f10"
     context.fillRect(0, 0, w, h)
     
     context.fillStyle = "#0f0"
