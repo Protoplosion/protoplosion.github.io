@@ -130,7 +130,7 @@ const splashes = [
 const splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
 let count = 0
 
-if (document.getElementById("splashText").innerHTML == splash) clearInterval(titleWrite)
+document.getElementById("splashText").innerHTML = ""
 
 let splashSet
 if (!splashSet) {
