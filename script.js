@@ -127,7 +127,20 @@ const splashes = [
     "That's it!"
 ]
 
-document.getElementById("splashText").innerHTML = splashes[Math.round(Math.random() * (splashes.length - 1))]
+const splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
+let count = 0
+
+if (document.getElementById("splashText").innerHTML == splash) clearInterval(titleWrite)
+
+let splashSet
+if (!splashSet) {
+    splashSet = true
+    var splashWrite = setInterval (() => {
+        document.getElementById("splashText").innerHTML += splash.charAt(count)
+        count++
+    }, 100)
+}
+document.getElementById("splashText").innerHTML = splash
 
 var supPressed = false
 var hue = 0
@@ -145,20 +158,6 @@ if (!supPressed) {
     }
 }
 
-
-const title = "Protoplosion"
-let count = 0
-
-if (document.getElementById("title").innerHTML == title) clearInterval(titleWrite)
-
-let titleSet
-if (!titleSet) {
-    titleSet = true
-    var titleWrite = setInterval (() => {
-        document.getElementById("title").innerHTML += title.charAt(count)
-        count++
-    }, 100)
-}
 
 const canvas = document.getElementById("canvas-background")
 const context = canvas.getContext("2d")
