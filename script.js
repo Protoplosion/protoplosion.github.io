@@ -162,11 +162,8 @@ if (!titleSet) {
 const canvas = document.getElementById("canvas-background")
 const context = canvas.getContext("2d")
 
-const w = canvas.width = document.documentElement.clientHeight;
-const h = canvas.height = document.documentElement.clientWidth;
-
-//const w = canvas.width = document.body.offsetWidth
-//const h = canvas.height = document.body.offsetHeight
+const w = canvas.width = document.body.offsetWidth
+const h = canvas.height = document.body.offsetHeight
 
 context.fillStyle = "#000"
 context.fillRect(0, 0, w, h)
@@ -193,11 +190,11 @@ setInterval (() => {
       else ypos[ind] = y + 20
 
     if (document.getElementById("splashText").innerHTML == "Yes master?") {
-        document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')";
-        document.getElementById("canvas-background").style.backgroundSize = "cover";
-        document.getElementById("canvas-background").style.backgroundRepeat = "no-repeat";
+        document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')"
+        document.getElementById("canvas-background").style.backgroundSize = "cover"
+        document.getElementById("canvas-background").style.backgroundRepeat = "no-repeat"
     } else {
-        context.fillStyle = "#10101f";
-        context.fillRect(0, 0, width, height);
+        context.fillStyle = "#10101f"
+        context.fillRect(0, 0, width, height)
     }
 }, 50)
