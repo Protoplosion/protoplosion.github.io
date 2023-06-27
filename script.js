@@ -170,13 +170,14 @@ context.fillRect(0, 0, w, h)
 const cols = Math.floor(w / 20) + 1
 const ypos = Array(cols).fill(0)
 
-const chars = splash
+const chars = splash.replace(/\s/g, "")
 
 setInterval (() => {
     context.fillStyle = "#10101f10"
     context.fillRect(0, 0, w, h)
-    
-    context.fillStyle = "#0f0"
+
+    if (!supPressed) context.fillStyle = "#0f0"
+    else context.fillStyle = "hsl(" + hue + ", 100%, 50%)"
     context.font = "15pt monospace"
     
     ypos.forEach((y, ind) => {
