@@ -125,22 +125,23 @@ const splashes = [
     "Achievement unlocked!",
     "..!",
     "That's it!"
-];
+]
 
-document.getElementById("splashText").innerHTML = splashes[Math.round(Math.random() * (splashes.length - 1))];
+document.getElementById("splashText").innerHTML = splashes[Math.round(Math.random() * (splashes.length - 1))]
 
-var supPressed = false;
-var hue = 0;
+var supPressed = false
+var hue = 0
 function sup() {
-    if (!supPressed) {
-        supPressed = true;
-        var noise = document.getElementById("noise");
-        noise.play();
-        setInterval(function () {
-            hue += 1;
-            if (hue >= 360) hue = 0;
-            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)";
-        }, 10);
+if (!supPressed) {
+    supPressed = true
+    var noise = document.getElementById("noise")
+    noise.play()
+    setInterval(function () {
+        hue += 1
+        if (hue >= 360)
+            hue = 0
+            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
+        }, 10)
     }
 }
 
@@ -176,19 +177,10 @@ const chars = title
 setInterval (() => {
     context.fillStyle = "#0001"
     context.fillRect(0, 0, w, h)
-  
+    
     context.fillStyle = "#0f0"
     context.font = "15pt monospace"
-  
-    ypos.forEach((y, ind) => {
-      const char = chars[Math.floor(Math.random() * chars.length)]
-  
-      const x = ind * 20
-      context.fillText(char, x, y)
-  
-      if (y > 100 + Math.random() * 10000) ypos[ind] = 0
-      else ypos[ind] = y + 20
-
+    
     if (document.getElementById("splashText").innerHTML == "Yes master?") {
         document.getElementById("canvas-background").style.backgroundImage = "url('waifu.jpg')"
         document.getElementById("canvas-background").style.backgroundSize = "cover"
@@ -196,5 +188,15 @@ setInterval (() => {
     } else {
         context.fillStyle = "#10101f"
         context.fillRect(0, 0, width, height)
+    }
+    
+    ypos.forEach((y, ind) => {
+        const char = chars[Math.floor(Math.random() * chars.length)]
+        
+        const x = ind * 20
+        context.fillText(char, x, y)
+        
+        if (y > 100 + Math.random() * 10000) ypos[ind] = 0
+        else ypos[ind] = y + 20
     }
 }, 50)
