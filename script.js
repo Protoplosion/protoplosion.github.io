@@ -151,7 +151,7 @@ function sup() {
         setInterval(function () {
             hue++
             document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
-        }, 10)
+        }, 1)
     }
 }
 
@@ -174,7 +174,7 @@ setInterval (() => {
     context.fillStyle = "#10101f10"
     context.fillRect(0, 0, w, h)
 
-    if (!supPressed) context.fillStyle = "#0f0"
+    if (!supPressed) context.fillStyle = "#f00"
     else context.fillStyle = "hsl(" + hue + ", 100%, 50%)"
     context.font = "15pt monospace"
     
