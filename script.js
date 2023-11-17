@@ -142,21 +142,17 @@ if (!splashSet) {
     }, 50)
 }
 
-
 var supPressed = false
 var hue = 0
 function sup() {
     if (!supPressed) {
         supPressed = true
-        var noise = document.getElementById("noise")
-        noise.play()
         setInterval(function () {
             hue++
             document.getElementById("splashtext").style.color = "hsl(" + hue + ", 100%, 50%)"
         }, 1)
     }
 }
-
 
 const canvas = document.getElementById("canvas-background")
 const context = canvas.getContext("2d")
