@@ -5,6 +5,13 @@
     font-weight: bold;
 }
 
+:root {
+    --color0: #ffe9c7;
+    --color1: #5a3030;
+    --color2: #482f2f;
+    --color3: #261919;
+}
+
 body {
     background-color: #ff0000;
     background-image: url("vignette.png");
@@ -12,7 +19,7 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
     text-align: center;
-    color: #ffffff;
+    color: var(--color0);
     margin: 0;
     padding: 0;
     position: absolute;
@@ -21,7 +28,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    animation: fadeInAnimation ease 3600s;
+    animation: fadeInAnimation ease 86400s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -40,7 +47,7 @@ body {
 }
 
 #top {
-    background: #20202f;
+    background: var(--color1);
     position: relative;
     width: 100%;
     height: 60px;
@@ -63,24 +70,51 @@ body {
     height: 100%;
 }
 
-#sub {
-    background: #40404f;
+#splashbox {
+    background: #000000;
+    border-width: 4px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: #008000;
     margin-top: 20px;
     padding: 10px;
 }
 
+#submain {
+    background: var(--color2);
+    border-width: 8px;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: #e9d5b6;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#cat {
+    position: fixed;
+    bottom: 10px;
+    left: -400px;
+}
+
+#catimg {
+    transition: transform 0.3s ease-in-out;
+}
+
+#catimg:hover {
+    transform: translateX(350px);
+}
+
 #hidden {
-    color: #10101f;
+    color: var(--color3);
     position: fixed;
     bottom: 10px;
     right: 10px;
-    padding: 0 12px;
     transition: color 1s ease-in-out;
-    cursor: default;
+    cursor: help;
 }
 
 #hidden:hover {
-    color: #ffffff;
+    color: var(--color0);
 }
 
 h1 {
@@ -99,7 +133,7 @@ p {
 }
 
 a {
-    color: #ffffff;
+    color: var(--color0);
     text-decoration: none;
 }
 
@@ -130,6 +164,7 @@ a {
 
 h2 {
     font-size: 20px;
+    color: #00ff00;
     animation: fadeIn ease 1s;
     -webkit-animation: fadeIn ease 1s;
     -moz-animation: fadeIn ease 1s;
@@ -138,9 +173,11 @@ h2 {
 }
 
 button {
-    background: #40404f;
-    border: none;
-    border-radius: 2px;
+    background: var(--color2);
+    border-width: 2px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #e9d5b6;
     margin: 6px;
     padding: 6px 12px;
     text-align: center;
@@ -151,8 +188,10 @@ button {
 }
 
 #login-btn {
-    background: #20202f;
+    background: var(--color1);
+    border: none;
     font-size: 16px;
+    color: var(--color0);
 }
 
 #youtube {

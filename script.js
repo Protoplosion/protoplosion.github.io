@@ -123,6 +123,7 @@ const splashes = [
     "You have earned a trophy!",
     "Trophy earned!",
     "Achievement unlocked!",
+    "Pet the cat!",
     "..!",
     "That's it!"
 ]
@@ -130,16 +131,17 @@ const splashes = [
 const splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
 let count = 0
 
-document.getElementById("splashText").innerHTML = ""
+document.getElementById("splashtext").innerHTML = ""
 
 let splashSet
 if (!splashSet) {
     splashSet = true
     var splashWrite = setInterval (() => {
-        document.getElementById("splashText").innerHTML += splash.charAt(count)
+        document.getElementById("splashtext").innerHTML += splash.charAt(count)
         count++
     }, 50)
 }
+
 
 var supPressed = false
 var hue = 0
@@ -150,7 +152,7 @@ function sup() {
         noise.play()
         setInterval(function () {
             hue++
-            document.getElementById("splashText").style.color = "hsl(" + hue + ", 100%, 50%)"
+            document.getElementById("splashtext").style.color = "hsl(" + hue + ", 100%, 50%)"
         }, 1)
     }
 }
@@ -162,7 +164,7 @@ const context = canvas.getContext("2d")
 const w = canvas.width = document.body.offsetWidth
 const h = canvas.height = document.body.offsetHeight
 
-context.fillStyle = "#10101f"
+context.fillStyle = "#261919"
 context.fillRect(0, 0, w, h)
 
 const cols = Math.floor(w / 20) + 1
@@ -171,7 +173,7 @@ const ypos = Array(cols).fill(0)
 const chars = splash.replace(/\s/g, "")
 
 setInterval (() => {
-    context.fillStyle = "#10101f10"
+    context.fillStyle = "#26191910"
     context.fillRect(0, 0, w, h)
 
     if (!supPressed) context.fillStyle = "#f00"
