@@ -38,8 +38,7 @@ const splashes = [
     "Why are we still here? Just to suffer?",
     "Why have you come here?",
     "What's that in the corner of the screen?",
-    "Hey Ryan!",
-    "Hey Billy!",
+    "Hey Ryan! Hey Billy!",
     "How's it going bros, my name is PewDiePie!",
     "Heelllo everybody, my name is Markiplier!",
     "Top of the mornin' to ya ladies!",
@@ -104,6 +103,7 @@ const splashes = [
     "The waffle house has found its new host!",
     "¿Quieres?",
     "Amogus!",
+    "ඞ!",
     "You're going to brazil!",
     "POV:",
     "Me:",
@@ -166,7 +166,7 @@ context.fillRect(0, 0, w, h)
 const cols = Math.floor(w / 20) + 1
 const ypos = Array(cols).fill(0)
 
-const chars = splash.replace(/\s/g, "")
+const chars = splash.replace(/\s|!/g, "")
 
 setInterval (() => {
     context.fillStyle = "#26191910"
