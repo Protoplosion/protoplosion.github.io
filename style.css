@@ -6,10 +6,11 @@
 }
 
 :root {
-    --color0: #ffe9c7;
+    --color0: #fff0da;
     --color1: #5a3030;
     --color2: #482f2f;
     --color3: #261919;
+    --color4: #e9d5b6;
 }
 
 body {
@@ -85,9 +86,28 @@ body {
     border-width: 8px;
     border-radius: 12px;
     border-style: solid;
-    border-color: #e9d5b6;
+    border-color: var(--color4);
     margin-top: 20px;
     padding: 10px;
+}
+
+#games {
+    text-align: left;
+}
+
+#itch {
+    margin: 8px;
+    border-width: 4px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: var(--color4);
+    width: 552px;
+    height: 162px;
+    transition: width 0.5s;
+}
+
+#itch:hover {
+    width: 752px;
 }
 
 #cat {
@@ -137,39 +157,14 @@ a {
     text-decoration: none;
 }
 
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-@-moz-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-@-webkit-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-@-o-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-@-ms-keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+hr {
+    border-top: 4px solid var(--color4);
+    margin: 10px 0px;
 }
 
 h2 {
     font-size: 20px;
     color: #00ff00;
-    animation: fadeIn ease 1s;
-    -webkit-animation: fadeIn ease 1s;
-    -moz-animation: fadeIn ease 1s;
-    -o-animation: fadeIn ease 1s;
-    -ms-animation: fadeIn ease 1s;
 }
 
 button {
