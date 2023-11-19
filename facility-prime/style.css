@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Title-Font;
+    src: url(cooperblack.ttf);
+}
+
+* {
+    font-family: monospace;
+}
+
+body {
+    background: #9C2D00;
+    text-align: center;
+    color: #F9FFFE;
+}
+
+#backpanel {
+    background: #9C2D00;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#timeline {
+    background: #9C2D00;
+    margin: 30px 30%;
+    padding: 5px 10px;
+}
+
+#event {
+    background: #882000;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+h1 {
+    font-family: Title-Font;
+    font-size: 30px;
+    color: #FFA007;
+}
+
+h2 {
+    font-size: 18px;
+    color: #FFA007;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 10px;
+    color: #FFA007;
+}
+
+p {
+    font-size: 12px;
+}
