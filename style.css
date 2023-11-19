@@ -6,11 +6,11 @@
 }
 
 :root {
-    --color0: #fff0da;
-    --color1: #5a3030;
-    --color2: #482f2f;
-    --color3: #261919;
-    --color4: #e9d5b6;
+    --color0: #fff0da; /*text color*/
+    --color1: #5a3030; /*primary*/
+    --color2: #482f2f; /*secondary*/
+    --color3: #261919; /*background*/
+    --color4: #e9d5b6; /*border color*/
 }
 
 body {
@@ -55,6 +55,7 @@ body {
 #title {
     background: var(--color1);
     margin: auto;
+    margin-top: 20px;
     border-width: 12px;
     border-radius: 18px;
     border-style: solid;
@@ -133,7 +134,7 @@ body {
 #hidden {
     color: var(--color3);
     position: fixed;
-    bottom: 10px;
+    bottom: 8px;
     right: 10px;
     transition: color 1s ease-in-out;
     cursor: help;
@@ -187,7 +188,7 @@ button {
     font-size: 20px;
     cursor: pointer;
     color: #ffffff;
-    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
 #login-btn {
@@ -198,7 +199,7 @@ button {
 }
 
 #youtube {
-    background: #a10000;
+    background: #860000;
     border-color: #a10000;
 }
 
@@ -208,27 +209,31 @@ button {
 }
 
 #twitter {
-    background: #13699e;
+    background: #0f527c;
     border-color: #13699e;
 }
 
 #reddit {
-    background: #a33800;
+    background: #7a2b00;
     border-color: #a33800;
 }
 
 #youtube:hover {
     background: #ff0000;
+    border-color: #ff0000;
 }
 
 #twitch:hover {
     background: #6441a5;
+    border-color: #6441a5;
 }
 
 #twitter:hover {
     background: #1da1f2;
+    border-color: #1da1f2;
 }
 
 #reddit:hover {
     background: #ff5700;
+    border-color: #ff5700;
 }

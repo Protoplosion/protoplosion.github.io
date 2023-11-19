@@ -149,7 +149,9 @@ function sup() {
         supPressed = true
         setInterval(function () {
             hue++
-            document.getElementById("splashtext").style.color = "hsl(" + hue + ", 100%, 50%)"
+            var hsl = "hsl(" + hue + ", 100%, 50%)"
+            document.getElementById("splashtext").style.color = hsl
+            document.getElementById("splashbox").style.borderColor = hsl
         }, 1)
     }
 }
