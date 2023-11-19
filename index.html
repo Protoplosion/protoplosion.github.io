@@ -17,13 +17,17 @@
             <div id="title">
                 <a href="https://youtube.com/@protoplosion"><img src="title.png"></img></a>
             </div>
+            <div id="misc-links">
+                <a href="facility/">Facility Timeline</a>
+                <a href="facility-prime/">Pioneer Labs Timeline</a>
+            </div>
             <div id="login">
                 <button id="login-btn" onclick="location.href='login';">Login</button>
             </div>
         </div>
         <div id="main">
             <div id="splashbox">
-                <h2 id="splashtext">404</h2>
+                <h2 id="splashtext" onclick="newSplash();">404</h2>
             </div>
             <div id="submain">
                 <button id="youtube" onclick="location.href='https://youtube.com/@protoplosion';">YouTube</button>
@@ -42,11 +46,12 @@
             </div>
         </div>
         <div id="cat">
-            <img id="catimg" src="cat.png" onclick="var audio = new Audio('meow.mp3'); audio.play();"></img>
+            <img id="catimg" src="cat.png" onclick="meow();"></img>
         </div>
         <div id="hidden">
             <h3 onclick="sup()">sup</h3>
         </div>
+        <img id="tardis" src="tardis.webp" onclick="dematerialise();"></img>
         <script src="script.js"></script>
     </body>
 </html>

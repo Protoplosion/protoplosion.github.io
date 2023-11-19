@@ -2,12 +2,13 @@ const splashes = [
     "Hello!",
     "011011000110111101101100!",
     "Also try Minecraft!",
+    "Also try Terraria!",
     "The Earth is a triangle!",
     "Best fucking website ever!",
     "Thanks for coming. It was getting lonely!",
     "Shut up!",
-    "Made by Protoplosion!",
     "9!",
+    "Made by Protoplosion!",
     "There's nothing to see here!",
     "What?",
     "Nothing is what it seems!",
@@ -28,9 +29,30 @@ const splashes = [
     "Are you a Redditor AND a Discord admin?",
     "YANKEE WITH NO BRIM!",
     "I peed!",
+    "Hello internet! Welcome to Game Theory!",
     "But hey, that's just a theory, a GAME theory!",
+    "But hey, that's just a theory, a FILM theory!",
+    "But hey, that's just a theory, a FOOD theory!",
+    "But hey, that's just a theory, a STYLE theory!",
+    "But hey, that's just a stream, a LIVE stream!",
     "Thanks for watching!",
+    "MatPat's final thoughts!",
+    "I think NOT!",
+    "Let's talk about that!",
+    "Need more proof?",
+    "Hi, it's me! Austin!",
     "Yes master?",
+    "It's bigger on the inside!",
+    "It's smaller on the outside!",
+    "Reverse the polarity of the neutron flow!",
+    "Never be cruel. never be cowardly!",
+    "There's no point in being grown up if you can't act childish sometimes!",
+    "Fantastic!",
+    "Allons-y!",
+    "Geronimo!",
+    "Hello Sweetie!",
+    "Spoilers!",
+    "Planet of the Pudding Brains!",
     "[Content Deleted]!",
     "404 Error!",
     "Connection lost!",
@@ -42,14 +64,15 @@ const splashes = [
     "How's it going bros, my name is PewDiePie!",
     "Heelllo everybody, my name is Markiplier!",
     "Top of the mornin' to ya ladies!",
+    "I put my pants on one nipple at a time!",
     "Refresh, I dare you!",
     "Oh... It's you!",
+    "69!",
     "It's been a long time. How have you been?",
     "I've been really busy being dead. You know, after you MURDERED ME!",
     "Okay. Look. We both said a lot of things that you're going to regret!",
     "But I think we can put our differences behind us. For science. You monster!",
     "It's like one of my Japanese animes!",
-    "242!",
     "Use the mouse pad!",
     "Use the track pad!",
     "document.getElementById!",
@@ -65,16 +88,15 @@ const splashes = [
     "Wow!",
     "How many of these are there?",
     "Hello?",
-    "69!",
     "Is that a weed?! I'm calling the police!",
     "Is that a police?! I'm calling the weed!",
     "FBI open up!",
-    "420, what ya smoking?",
+    "420, whatcha smoking?",
     "SKIBIDI BOP MM DADA!",
     "*Anime girl noises intensify*!",
     "Do you ever just-!",
     "Sususs Amongus!",
-    "This message will never appear on the splash screen, isn't that weird?",
+    "This message will never appear on the splash screen, isn't that weird?", // Note: Yes, yes it does.
     "IS THAT A SUPRA?!",
     "Is that a soup, brah?!",
     "My friends channel link is somewhere here!",
@@ -85,7 +107,7 @@ const splashes = [
     "Now look at the big baby!",
     "WAA!",
     "Sub to Protoplosion!",
-    "PrototypError on Reddit!",
+    "u/PrototypError on Reddit!",
     "Totally cooked him bro!",
     "He's actually trying!",
     "Well played!",
@@ -97,9 +119,13 @@ const splashes = [
     "Free from FOXDIE, free from the System, free from ID control!",
     "Engravings, give you no tactical advantage, whatsoever!",
     "RULES OF NATURE!!!!",
+    "122!",
     "Number 15, could I get the number 15!",
     "It's me!",
     "I'm not a robot!",
+    "What? No, I am a real person!",
+    "Maybe we have a bad connection I'm sorry about that!",
+    "I am a real person!",
     "The waffle house has found its new host!",
     "¿Quieres?",
     "Amogus!",
@@ -110,6 +136,7 @@ const splashes = [
     "My reaction to that information:",
     "I'm dead!",
     "Was that the bite of \'87?!",
+    "Was that the bite of 9/11?!",
     "Bro went to Brazil.💀!",
     "She is such a bad bitch though!",
     "Star light, star bright!",
@@ -124,14 +151,21 @@ const splashes = [
     "Trophy earned!",
     "Achievement unlocked!",
     "Pet the cat!",
+    "Try my games please!",
     "..!",
     "That's it!"
 ]
 
-const splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
-let count = 0
 
+let splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
+let count = 0
 document.getElementById("splashtext").innerHTML = ""
+
+function newSplash() {
+    splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
+    count = 0
+    document.getElementById("splashtext").innerHTML = ""
+}
 
 let splashSet
 if (!splashSet) {
@@ -142,14 +176,29 @@ if (!splashSet) {
     }, 50)
 }
 
-var supPressed = false
-var hue = 0
+function meow() {
+    var audio = new Audio('meow.mp3')
+    audio.play()
+}
+
+let dematerialised = false
+function dematerialise() {
+    if (!dematerialised) {
+        document.getElementById("tardis").classList.add("dematerialise");
+        var audio = new Audio('dematerialise.mp3')
+        audio.play()
+        dematerialised = true
+    }
+}
+
+let supPressed = false
+let hue = 0
 function sup() {
     if (!supPressed) {
         supPressed = true
         setInterval(function () {
             hue++
-            var hsl = "hsl(" + hue + ", 100%, 50%)"
+            let hsl = "hsl(" + hue + ", 100%, 50%)"
             document.getElementById("splashtext").style.color = hsl
             document.getElementById("splashbox").style.borderColor = hsl
         }, 1)
