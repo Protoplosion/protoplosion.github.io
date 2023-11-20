@@ -1,8 +1,4 @@
-import splashesRAW from "./splashes.txt"
-
-let splashes = splashesRAW.split("\n")
-
-/*const splashes = [
+const splashes = [
     "Hello!",
     "011011000110111101101100!",
     "Also try Minecraft!",
@@ -158,8 +154,7 @@ let splashes = splashesRAW.split("\n")
     "Try my games please!",
     "..!",
     "That's it!"
-]*/
-
+]
 
 let splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
 let count = 0
