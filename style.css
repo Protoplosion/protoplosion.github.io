@@ -218,6 +218,9 @@ hr {
 h2 {
     font-size: 20px;
     color: #00ff00;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button {
