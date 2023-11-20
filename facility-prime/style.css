@@ -1,56 +1,75 @@
 @font-face {
-    font-family: Title-Font;
-    src: url(cooperblack.ttf);
+    font-family: title;
+    src: url(fonts/bugaki/Bugaki.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/roboto/Roboto-Regular.ttf);
+}
+
+:root {
+    --white: #f9fffe;
+    --brown: #9c2d00;
+    --darkbrown: #882000;
+    --orange: #ffa007;
 }
 
 * {
-    font-family: monospace;
+    font-family: roboto;
+    color: var(--white);
 }
 
 body {
-    background: #9C2D00;
+    background: var(--brown);
     text-align: center;
-    color: #F9FFFE;
 }
 
-#backpanel {
-    background: #9C2D00;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+.timeline {
+    background: var(--brown);
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 8px 12px;
+    max-width: 768px;
 }
 
-#timeline {
-    background: #9C2D00;
-    margin: 30px 30%;
-    padding: 5px 10px;
+.event {
+    background: var(--darkbrown);
+    text-align: left;
+    margin: 4px 0px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    width: fit-content;
 }
 
-#event {
-    background: #882000;
-    margin-bottom: 10px;
-    padding: 10px;
+.vr {
+    background: var(--darkbrown);
+    margin: 0px 36px;
+    width: 4px;
+    height: 36px;
 }
 
 h1 {
-    font-family: Title-Font;
-    font-size: 30px;
-    color: #FFA007;
+    font-family: title;
+    letter-spacing: 1px;
+    color: var(--orange);
 }
 
 h2 {
     font-size: 18px;
-    color: #FFA007;
+    color: var(--orange);
 }
 
 h3 {
+    font-family: monospace;
     font-size: 24px;
+    margin: 10px 20px;
 }
 
 h4 {
     font-size: 10px;
-    color: #FFA007;
+    color: var(--orange);
+    margin: 0px;
 }
 
 p {
