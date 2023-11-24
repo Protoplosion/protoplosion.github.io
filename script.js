@@ -156,12 +156,14 @@ const splashes = [
     "That's it!"
 ]
 
-let splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
+let randomSplash = Math.round(Math.random() * (splashes.length - 1))
+let splash = splashes[randomSplash]
 let count = 0
 document.getElementById("splashtext").innerHTML = ""
 
 function newSplash() {
-    splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
+    randomSplash = Math.round(Math.random() * (splashes.length - 1))
+    splash = splashes[randomSplash]
     count = 0
     document.getElementById("splashtext").innerHTML = ""
     let audio = new Audio('click.mp3')
@@ -174,12 +176,22 @@ if (!splashSet) {
     var splashWrite = setInterval (() => {
         document.getElementById("splashtext").innerHTML += splash.charAt(count)
         count++
-        if(splash.length === count) {
-            let audio = new Audio('blip-low.mp3')
-            audio.play()
-        } else if(splash.charAt(count) !== "") {
-            let audio = new Audio('blip.mp3')
-            audio.play()
+        if(randomSplash >= 30 && randomSplash <= 37) {
+            if(splash.length === count) {
+                let audio = new Audio('mat-blip-low.mp3')
+                audio.play()
+            } else if(splash.charAt(count) !== "") {
+                let audio = new Audio('mat-blip.mp3')
+                audio.play()
+            }
+        } else {
+            if(splash.length === count) {
+                let audio = new Audio('blip-low.mp3')
+                audio.play()
+            } else if(splash.charAt(count) !== "") {
+                let audio = new Audio('blip.mp3')
+                audio.play()
+            }
         }
     }, 50)
 }
