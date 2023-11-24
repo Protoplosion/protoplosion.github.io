@@ -96,7 +96,7 @@ const splashes = [
     "*Anime girl noises intensify*!",
     "Do you ever just-!",
     "Sususs Amongus!",
-    "This message will never appear on the splash screen, isn't that weird?", // Note: Yes, yes it does.
+    "This message will never appear on the splash screen, isn't that weird?",
     "IS THAT A SUPRA?!",
     "Is that a soup, brah?!",
     "My friends channel link is somewhere here!",
