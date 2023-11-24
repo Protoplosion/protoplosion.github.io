@@ -19,7 +19,7 @@ body {
     background-image: url("vignette.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: 100%;
     text-align: center;
     color: var(--color0);
     margin: 0;
