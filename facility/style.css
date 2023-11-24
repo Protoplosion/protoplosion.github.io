@@ -50,6 +50,7 @@ body {
 
 h1 {
     font-family: title;
+    font-weight: 100;
     letter-spacing: 1px;
 }
 
@@ -70,4 +71,14 @@ h4 {
 
 p {
     font-size: 12px;
+}
+
+a {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 100;
+    color: var(--cyan);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }

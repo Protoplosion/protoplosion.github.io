@@ -75,3 +75,13 @@ h4 {
 p {
     font-size: 12px;
 }
+
+a {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 100;
+    color: var(--orange);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
