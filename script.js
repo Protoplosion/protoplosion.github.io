@@ -164,6 +164,8 @@ function newSplash() {
     splash = splashes[Math.round(Math.random() * (splashes.length - 1))]
     count = 0
     document.getElementById("splashtext").innerHTML = ""
+    let audio = new Audio('click.mp3')
+    audio.play()
 }
 
 let splashSet
@@ -172,6 +174,13 @@ if (!splashSet) {
     var splashWrite = setInterval (() => {
         document.getElementById("splashtext").innerHTML += splash.charAt(count)
         count++
+        if(splash.length === count) {
+            let audio = new Audio('blip-low.mp3')
+            audio.play()
+        } else if(splash.charAt(count) !== "") {
+            let audio = new Audio('blip.mp3')
+            audio.play()
+        }
     }, 50)
 }
 
@@ -213,7 +222,7 @@ function linkUnavailable(btnId) {
 
 
 function meow() {
-    var audio = new Audio('meow.mp3')
+    let audio = new Audio('meow.mp3')
     audio.play()
 }
 
@@ -222,7 +231,7 @@ let dematerialised = false
 function dematerialise() {
     if (!dematerialised) {
         document.getElementById("tardis").classList.add("dematerialise");
-        var audio = new Audio('dematerialise.mp3')
+        let audio = new Audio('dematerialise.mp3')
         audio.play()
         dematerialised = true
     }

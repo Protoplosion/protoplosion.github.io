@@ -3,6 +3,7 @@
     margin: 0;
     font-family: "Courier New", "Courier", monospace;
     font-weight: bold;
+    user-select: none;
 }
 
 :root {
@@ -138,7 +139,6 @@ a.facility-prime {font-family: facility-prime;}
     border-color: #008000;
     padding: 10px;
     height: 20px;
-    user-select: none;
 }
 
 #submain {
