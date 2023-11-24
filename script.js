@@ -175,10 +175,48 @@ if (!splashSet) {
     }, 50)
 }
 
+
+const errors = [
+    "Error",
+    "Nope!",
+    "Can't do!",
+    "Nuh Uh.",
+    "Not know!",
+    "Look away.",
+    "No link!",
+    "Coming soon!",
+    "Maybe not...",
+    "No touch.",
+    "Eat dust!",
+    "Be patient."
+]
+
+function linkUnavailable(btnId) {
+    let btn = document.getElementById(btnId)
+    btn.disabled = true
+    btn.innerHTML = errors[Math.round(Math.random() * (errors.length - 1))]
+    setTimeout(function() {
+        btn.disabled = false
+        switch(btnId) {
+            case "twitch":
+                btn.innerHTML = "Twitch"
+                break
+            case "twitter":
+                btn.innerHTML = "Twitter"
+                break
+            case "reddit":
+                btn.innerHTML = "Reddit"
+                break
+        }
+    }, 2000)
+}
+
+
 function meow() {
     var audio = new Audio('meow.mp3')
     audio.play()
 }
+
 
 let dematerialised = false
 function dematerialise() {
@@ -189,6 +227,7 @@ function dematerialise() {
         dematerialised = true
     }
 }
+
 
 let supPressed = false
 let hue = 0
@@ -203,6 +242,7 @@ function sup() {
         }, 1)
     }
 }
+
 
 const canvas = document.getElementById("canvas-background")
 const context = canvas.getContext("2d")
