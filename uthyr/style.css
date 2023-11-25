@@ -135,6 +135,10 @@ div.br {
 }
 
 a {
+    color: brown;
+}
+
+#home {
     font-family: monospace;
     font-size: 12px;
     font-weight: 100;
