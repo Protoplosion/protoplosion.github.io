@@ -76,7 +76,7 @@ body {
 
 h1 {
     font-family: title;
-    font-size: 5vw;
+    font-size: 10vmin;
     letter-spacing: 5px;
     animation: h1Alive cubic-bezier(0.39, 0.575, 0.565, 1) 6s;
     transition: letter-spacing cubic-bezier(0.39, 0.575, 0.565, 1) 1s;
