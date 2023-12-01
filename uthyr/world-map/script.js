@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("map-canvas")
 
 canvas.width = document.body.offsetWidth

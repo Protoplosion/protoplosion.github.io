@@ -19,7 +19,7 @@
 }
 
 body {
-    background-color: black;
+    background: black;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -31,19 +31,25 @@ body {
     overflow: hidden;
 }
 
-.paper {
+#paper {
     background-color: blanchedalmond;
     background-image: url(../paper.jpg);
     background-repeat: repeat;
     background-attachment: local;
     background-size: 200%;
     margin: auto;
-    padding: 0;
+    padding: 20px;
     position: fixed;
+    left: -390px;
     width: 410px;
     height: 100%;
     box-shadow: 0px 0px 10px 0px black;
     overflow: auto;
+    transition: 0.3s;
+}
+
+#paper:hover {
+    left: 0px;
 }
 
 ::-webkit-scrollbar {
@@ -58,7 +64,10 @@ h1 {
 }
 
 canvas {
-    background: black;
+    background-color: black;
+    background-image: url(../background.jpg);
+    background-repeat: repeat;
+    background-size: 50%;
     position: absolute;
     top: 0;
     left: 0;

@@ -30,7 +30,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     animation: fadeInAnimation ease 86400s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -42,7 +41,7 @@ body {
 }
 
 #canvas-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -51,13 +50,13 @@ body {
 
 #top {
     position: relative;
+    margin-top: 20px;
     width: 100%;
 }
 
 #title {
     background: var(--color1);
     margin: auto;
-    margin-top: 20px;
     border-width: 12px;
     border-radius: 18px;
     border-style: solid;
@@ -67,6 +66,30 @@ body {
     height: 60px;
 }
 
+#login {
+    position: absolute;
+    height: 100%;
+    top: -6px;
+    right: 6px;
+}
+
+#main {
+    position: relative;
+    margin: 0 20%;
+    height: 100%;
+}
+
+#splashbox {
+    background: #000000;
+    margin-top: 20px;
+    border-width: 4px;
+    border-radius: 6px;
+    border-style: double;
+    border-color: #008000;
+    padding: 10px;
+    height: 20px;
+}
+
 #misc-links {
     background: var(--color2);
     border-width: 4px;
@@ -74,12 +97,14 @@ body {
     border-style: solid;
     border-color: var(--color4);
     position: absolute;
-    left: -230px;
+    top: 100px;
+    right: -20px;
     width: 240px;
-    transition: left 0.2s;
+    transition: right 0.2s;
+    z-index: 5;
 }
 
-#misc-links:hover {left: -10px;}
+#misc-links:hover {right: -240px;}
 
 #misc-links a {
     font-weight: 100;
@@ -117,30 +142,6 @@ a.facility-prime {font-family: facility-prime;}
     background: var(--color1);
 }
 
-#login {
-    position: fixed;
-    height: 100%;
-    top: 6px;
-    right: 6px;
-}
-
-#main {
-    position: relative;
-    margin: 0 20%;
-    height: 100%;
-}
-
-#splashbox {
-    background: #000000;
-    margin-top: 20px;
-    border-width: 4px;
-    border-radius: 6px;
-    border-style: double;
-    border-color: #008000;
-    padding: 10px;
-    height: 20px;
-}
-
 #submain {
     background: var(--color2);
     margin-top: 20px;
@@ -149,6 +150,8 @@ a.facility-prime {font-family: facility-prime;}
     border-style: solid;
     border-color: var(--color4);
     padding: 10px;
+    position: relative;
+    z-index: 10;
 }
 
 #games {text-align: left;}
@@ -167,7 +170,7 @@ a.facility-prime {font-family: facility-prime;}
 #itch:hover {width: 752px;}
 
 #cat {
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     left: -400px;
 }
