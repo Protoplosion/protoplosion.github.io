@@ -4,6 +4,7 @@
     font-family: "Courier New", "Courier", monospace;
     font-weight: bold;
     user-select: none;
+    cursor: url(cursor.png), pointer;
 }
 
 :root {
@@ -64,6 +65,7 @@ body {
     padding: 12px;
     width: fit-content;
     height: 60px;
+    box-shadow: 0px 0px 10px 0px black;
 }
 
 #login {
@@ -74,8 +76,8 @@ body {
 }
 
 #main {
-    position: relative;
     margin: 0 20%;
+    position: relative;
     height: 100%;
 }
 
@@ -88,7 +90,10 @@ body {
     border-color: #008000;
     padding: 10px;
     height: 20px;
+    cursor: url(cursor-splash.png), auto;
 }
+
+#splashtext {cursor: url(cursor-splash.png), auto;}
 
 #misc-links {
     background: var(--color2);
@@ -175,7 +180,10 @@ a.facility-prime {font-family: facility-prime;}
     left: -400px;
 }
 
-#catimg {transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);}
+#catimg {
+    cursor: url(hand.png), auto;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
 #catimg:hover {transform: translateX(350px);}
 
@@ -185,7 +193,10 @@ a.facility-prime {font-family: facility-prime;}
     bottom: 8px;
     right: 10px;
     transition: color 1s ease-in-out;
-    cursor: help;
+}
+
+h3 {
+    cursor: url(cursor-help.png), auto;
 }
 
 #hidden:hover {color: var(--color0);}
@@ -254,7 +265,6 @@ button {
     height: 40px;
     text-align: center;
     font-size: 20px;
-    cursor: pointer;
     color: #ffffff;
     white-space: nowrap;
     transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
