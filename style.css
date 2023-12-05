@@ -176,7 +176,7 @@ a.facility-prime {font-family: facility-prime;}
 
 #cat {
     position: absolute;
-    bottom: 10px;
+    bottom: -400px;
     left: -400px;
 }
 
@@ -229,8 +229,8 @@ img {height: 100%;}
 p {
     color: #00000000;
     margin: 10px;
-    font-size: 8px;
-    text-align: left;
+    font-size: 10px;
+    user-select: auto;
 }
 
 a {
