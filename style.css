@@ -209,7 +209,8 @@ h3 {
     height: auto;
     animation: tardisFly linear 3s;
     animation-iteration-count: 1;
-    animation-delay: 120s;
+    animation-delay: 10s;
+    z-index: 15;
 }
 
 .dematerialise {
