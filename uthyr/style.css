@@ -22,7 +22,7 @@ body {
     background-color: black;
     background-image: url(background.jpg);
     background-repeat: repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: 50%;
     text-align: center;
     margin: 0;
@@ -140,6 +140,10 @@ div.br {
 
 a {
     color: brown;
+}
+
+ul {
+    list-style-type: "~ ";
 }
 
 #home {
