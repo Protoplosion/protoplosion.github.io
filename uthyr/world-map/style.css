@@ -16,6 +16,7 @@
     font-family: script;
     font-weight: 100;
     color: var(--text);
+    user-select: none;
 }
 
 body {
@@ -73,4 +74,5 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
+    cursor: move;
 }
