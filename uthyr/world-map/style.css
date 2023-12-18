@@ -8,9 +8,7 @@
     src: url(../fonts/jarrow/JARROW__.TTF);
 }
 
-:root {
-    --text: #000000bb;
-}
+:root {--text: #000000bb;}
 
 * {
     font-family: script;
@@ -49,9 +47,7 @@ body {
     transition: 0.3s;
 }
 
-#paper:hover {
-    left: 0px;
-}
+#paper:hover {left: 0px;}
 
 ::-webkit-scrollbar {
     width: 0;
