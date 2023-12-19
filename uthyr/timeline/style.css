@@ -3,7 +3,7 @@ h2, h3 {
 }
 
 #date {
-    font-family: serif;
+    font-family: nav;
 }
 
 table {
@@ -20,10 +20,64 @@ th {
 }
 
 td {
-    font-family: serif;
-    font-size: 18px;
     border-left: 2px solid var(--text);
     padding: 6px;
     width: 80px;
     text-align: left;
+}
+
+.event {
+    margin: auto;
+    padding: 0 60px;
+    width: fit-content;
+}
+
+.event-top {
+    margin: 0;
+    border: 3px solid var(--text);
+    border-top-width: 2px;
+    border-bottom: none;
+    border-radius: 4px;
+    height: 15px;
+    animation: none;
+}
+
+.event h2 {
+    font-family: nav;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#beginning {
+    font-size: 40px;
+    margin: 0;
+}
+
+.event-content {
+    margin: 0;
+    padding: 0 40px;
+    width: fit-content;
+}
+
+.event-bottom {
+    margin: 0;
+    border: 3px solid var(--text);
+    border-bottom-width: 2px;
+    border-top: none;
+    border-radius: 4px;
+    height: 15px;
+    animation: none;
+}
+
+.vr {
+    background: var(--text);
+    margin: auto;
+    width: 3px;
+    height: 60px;
+    animation: vrAlive cubic-bezier(0.39, 0.575, 0.565, 1) 4s;
+}
+
+@keyframes vrAlive {
+    0% {height: 0}
+    100% {height: 60px}
 }

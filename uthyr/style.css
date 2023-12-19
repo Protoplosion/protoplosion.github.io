@@ -173,7 +173,11 @@ h3 {
     100% {letter-spacing: 2px;}
 }
 
-p {line-height: 20px;}
+p {
+    font-size: 16.5px;
+    margin: 12px 0;
+    line-height: 20px;
+}
 
 div.br {
     height: 20px;
@@ -188,13 +192,3 @@ div.br {
 a {color: brown;}
 
 ul {list-style-type: "~ ";}
-
-#home {
-    font-family: monospace;
-    font-size: 12px;
-    font-weight: 100;
-    color: brown;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
