@@ -8,21 +8,83 @@
         <meta name="author" content="Protoplosion">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../icon.ico">
+        <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <canvas id="map-canvas"></canvas>
         <div id="paper">
-            <h1>Top Text</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi justo, efficitur vulputate nunc nec, pellentesque imperdiet ligula. Duis accumsan nisl lorem, eu sodales tortor vehicula sed. Maecenas laoreet dignissim tortor eu blandit. Nam sollicitudin, eros at suscipit suscipit, justo justo venenatis augue, eget fermentum odio ipsum eget lectus. Nunc elementum lectus quis tortor laoreet eleifend. Donec enim velit, posuere a sodales scelerisque, iaculis quis nulla. Etiam sed auctor nunc. Aenean a diam in enim aliquam feugiat. Pellentesque vehicula est non erat condimentum, id dignissim ipsum pharetra. Morbi non posuere magna. Sed maximus non lectus quis sagittis.
-
-                Nulla vitae laoreet magna. Phasellus at nibh commodo, dictum nibh id, malesuada turpis. Pellentesque lectus felis, maximus quis faucibus sit amet, scelerisque ac risus. Curabitur sollicitudin purus id nisl molestie faucibus ac at enim. Maecenas quis orci laoreet, molestie sem ac, efficitur mauris. Aliquam non ante nec magna sollicitudin porttitor. Ut tincidunt massa nec ex mattis condimentum. Donec odio sapien, sagittis ullamcorper posuere in, tincidunt at lectus. Aenean nec ornare nulla, non finibus dui. Praesent vitae leo malesuada, lacinia massa a, venenatis diam. Suspendisse ornare purus id vestibulum feugiat. Praesent varius, velit ut lacinia egestas, nisi magna luctus odio, eget fermentum tortor libero ac augue. Vestibulum in lectus mauris.
-                
-                Quisque elementum tristique sollicitudin. Donec id faucibus magna, vel ultricies leo. Nam commodo mauris et mattis hendrerit. In convallis metus dapibus urna venenatis, facilisis tristique nisi egestas. Nullam suscipit quam pretium, cursus tellus quis, tincidunt massa. Sed ut ultrices lorem. Aliquam eget ligula nunc. Sed vestibulum euismod neque, nec maximus sapien dapibus at. Nulla facilisi. Pellentesque bibendum urna at interdum auctor. Integer at metus eu est accumsan condimentum.
-                
-                Integer auctor risus nisi, vel commodo nisl eleifend id. Pellentesque varius auctor blandit. Duis tincidunt ac urna interdum congue. Pellentesque accumsan fermentum pretium. Proin faucibus luctus lectus, eu tempor urna interdum ut. Praesent arcu tortor, porttitor vitae mi ut, sagittis auctor dui. Fusce luctus laoreet lacus.
-                
-                Proin vitae tortor in dolor porttitor sodales non venenatis nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus lobortis pulvinar. Curabitur elit ipsum, accumsan ut dui id, egestas elementum quam. Phasellus ut commodo magna, ac egestas libero. Proin lobortis quis quam ut mollis. Fusce non tortor justo. Proin eget augue in lacus congue maximus id at enim. Ut feugiat turpis eget massa tincidunt, in ornare est tincidunt. Quisque bibendum dui sollicitudin, laoreet nunc et, posuere purus. Praesent quis odio vel odio ornare tincidunt at ornare elit.</p>
+            <h1>World Map</h1>
+            <div id="main">
+                <nav>
+                    <hr id="nav-top">
+                    <a href="/">Homepage</a><br>
+                    <a href="../">Clavis of Uthyr</a><br>
+                    <a href="../calendar/">Calendar</a>
+                    <hr id="nav-bottom">
+                </nav>
+                <h2>Ausmane-Ra</h2>
+                <h3>Pyarkher</h3>
+                <p>Capitol of Ausmane-Ra. Long story short, friends with the Pishtar Empire.</p>
+                <hr>
+                <h2>Dashashan</h2>
+                <h3>Bu-Sha City</h3>
+                <p>The capital of Dashashan, one of the continent's larger desert cities, is a remarkable achievement. It's well-protected by surrounding mountains, guarding against attacks from other nations and frequent sandstorms. The city's natural defenses, particularly the sandstorms, have thwarted invading armies in the past. Dashashan maintains strong ties with the Pishtar Empire.</p>
+                <h3>Dashashan Desert</h3>
+                <p>This is the largest desert on the continent. While the entire country of Dashashan is a desert, this specific area is what people typically mean when they refer to the Dashashan desert, as it is the most remote area in Dashashan.</p>
+                <h3>Draon Mountain</h3>
+                <p>This area in Dashashan was included in the peace treaty trade between both empires.</p>
+                <hr>
+                <h2>Hamarheim</h2>
+                <p>This island, Hamarheim, got its name from Old Norse, meaning "Hammer Home" due to a landmass in the south that resembles a common hammer shape with a curved handle. Hamarheim, situated near the North Pole, experiences longer winters with heavy snowfall compared to other regions. It is divided into five Holds, each ruled by its own Jarl, and features property boundaries marked by thin lines across the map. Its capital, Viljasterkur, has undergone numerous transformations over the years, and today, it stands as a favored destination for traders and travelers alike.</p>
+                <h3>Regions/Cities</h3>
+                <ul>
+                    <li><p><i>Greywood:</i> Greywood, a city abundant in towering grey trees, is the sole settlement on an island resembling a hammer, giving Hamarheim its name. This island played a role in the Polarskish conquest of the north. They utilized a unique native wood from this island, greywood, which has the ability to effortlessly break through glaciers, making it a valuable resource. Additionally, greywood serves as the primary material for crafting various weapons and tools.</p></li>
+                    <li><p><i>Jarnnog Islands:</i> The name for the group of islands around of Hamarheim.</p></li>
+                    <li><p><i>Joklaborg:</i> The city known for its hold on the most Jarnnog Islands.</p></li>
+                    <li><p><i>Midfjord:</i> The center-most city in Hamarheim.</p></li>
+                    <li><p><i>Nadirstar:</i> A serene town where numerous Hamrish elders choose to study or spend their remaining days.</p></li>
+                    <li><p><i>Vesturhald:</i> The west-most city in Hamarheim.</p></li>
+                    <li><p><i>Viljasterkur:</i> This is one of Hamarheim's several capitals. Despite its history of frequent changes, this capital has stood the test of time and is favored by traders. While the name suggests a Nordic influence, the people here have stronger similarities to Scots.</p></li>
+                </ul>
+                <hr>
+                <h2>The Grozav Empire</h2>
+                <h3>Grozic City</h3>
+                <p>The capital of the Grozav Empire, often regarded as the continent's capital, is the world's largest city characterized by towering structures and a diverse cultural hub. The Grozav Empire holds sway over nearly every country, except for The Pishtar Empire and Dashashan, effectively splitting the continent into two empires.</p>
+                <h3>Summerset Isle</h3>
+                <p>When Grozav residents discovered this island, they encountered native inhabitants. The Grozic people treated the natives with kindness, and the feeling was mutual. Although the natives don't consider themselves part of Grozav, they have no objection if maps depict them as such.</p>
+                <hr>
+                <h2>Medvadia</h2>
+                <h3>Medverod</h3>
+                <p>The capitol of Medvadia. On visiting, it is clear that bears play a significant role in their culture. As for the country, a formidable nation, broke away from Polarskin when the Grozav Empire seized control in the past.</p>
+                <h3>Zamoroshenayavezda</h3>
+                <p>This is the world's tallest mountain, inhabited by giant bears renowned for their ability to scale steep snowy slopes. Researchers consider them the most formidable creatures ever created. Legend has it that the simultaneous roars of these bears shaped the mountain as their home. Its immense height makes it a notable landmark used for navigation.</p>
+                <hr>
+                <h2>The Pishtar Empire</h2>
+                <h3>Pishtar City</h3>
+                <p>Didn't type LORE yet.</p>
+                <h3>Tokaprushi</h3>
+                <p>This is a state of the Pishtar Empire. It was once a state of The Grozav Empire, but was handed over as a piece treaty and in return the Grozav Empire gets Rowenina.</p>
+                <hr>
+                <h2>Polarskin</h2>
+                <h3>Gramshurr</h3>
+                <p>This is one of the oldest capitals in Polarskin and human history, yet no records exist from its early days, possibly due to a lack of documentation or the ravages of time and climate. Polarskin was once a vast nation spanning the entire northern half of the continent, but it fragmented when the Grozav Empire easily seized control. The current Polarskin is not the same as the ancient nation; it only retains the name.</p>
+                <h3>Northstag Island</h3>
+                <p>This island offers the nearest accessible point to Greater Polarskin without immediate freezing. While some may consider it part of the Great North, its habitability suggests otherwise. Hamrish monks visit here to pray, believing that proximity to higher altitudes brings them closer to the Gods.</p>
+                <hr>
+                <h2>Greater Polarskin</h2>
+                <h3>Snyobego</h3>
+                <p>Due to its harsh climate, Snyobego stands as the sole surviving settlement in Greater Polarskin (formerly known as the Great North). Despite its name similarity to Polarskin, it is not inhabited by Polarskish people. In the distant past, the Polarskish were known for conquering the entire northern region of the continent. Residents living to the south of Polarskin referred to everything north of them as Polarskin. When settlers from the south reached the Great North, they assumed it was already claimed by the Polarskish, hence the name. Although this was never the case, and the truth has been known for a long time, the name has persisted for simplicity. While the Polarskish occasionally visit Snyobego, it is not owned by anyone.</p>
+                <hr>
+                <h2>Rowenina</h2>
+                <h3>Rowedom</h3>
+                <p>Rowenina's capital boasts a vibrant culture and a history of dependence on other countries, including its past affiliation with Medvadia and the Grozav Empire. Notably, Rowenina is the sole landlocked nation and relies on the river passing through Medvadia for transporting goods, fostering a strong bond between the two countries. Additionally, Rowenina has close ties to the Grozav Empire, stemming from its trade relationship with the Pishtar Empire, which previously denied Rowenina access to the river through Medvadia.</p>
+                <hr>
+                <h2>Skuegrad</h2>
+                <h3>Oaklasauw</h3>
+                <p>This is Skuegrad's capital on the coast of Ganavatn Bay, long home to the Skuic people for generations. Skuegrad was formerly under Polarskin's rule but gained independence. The Grozav Empire granted Skuegrad sovereignty after invading Polarskin. Despite Skuegrad's prior independence from Polarskin, the Grozav Empire secured full independence in exchange for preferential trade and enforced religious beliefs. Despite their perceived differences in dependence, Skuegrad shares a common history with its neighboring country, Rowenina.</p>
+                <hr>
+            </div>
         </div>
     </body>
     <script src="script.js"></script>

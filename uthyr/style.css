@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: nav;
+    src: url(fonts/stowe-titling/STOWE___.otf);
+}
+
+@font-face {
     font-family: script;
     src: url(fonts/jarrow/JARROW__.TTF);
 }
@@ -31,7 +36,7 @@ body {
     height: 100%;
 }
 
-.backbackpaper {
+#backbackpaper {
     background-color: blanchedalmond;
     background-image: url(paper.jpg);
     background-repeat: repeat;
@@ -45,7 +50,7 @@ body {
     box-shadow: 0px 0px 10px 0px black;
 }
 
-.backpaper {
+#backpaper {
     background-color: blanchedalmond;
     background-image: url(paper.jpg);
     background-repeat: repeat;
@@ -60,7 +65,7 @@ body {
     box-shadow: 0px 0px 10px 0px black;
 }
 
-.paper {
+#paper {
     background-color: blanchedalmond;
     background-image: url(paper.jpg);
     background-repeat: repeat;
@@ -86,7 +91,7 @@ h1 {
     100% {letter-spacing: 5px;}
 }
 
-.main {
+#main {
     margin: 0 50px;
     text-align: left;
 }
@@ -96,6 +101,8 @@ nav {text-align: center;}
 #nav-top {
     margin-top: 40px;
     margin-bottom: 0;
+    border: none;
+    border-top: 4px double var(--text);
     animation: navTopAlive cubic-bezier(0.39, 0.575, 0.565, 1) 5s;
 }
 
@@ -107,6 +114,8 @@ nav {text-align: center;}
 #nav-bottom {
     margin-top: 0;
     margin-bottom: 40px;
+    border: none;
+    border-top: 4px double var(--text);
     animation: navBottomAlive cubic-bezier(0.39, 0.575, 0.565, 1) 5s;
 }
 
@@ -117,7 +126,7 @@ nav {text-align: center;}
 
 nav a {
     background: none;
-    font-family: title;
+    font-family: nav;
     font-size: 3vmin;
     letter-spacing: 2px;
     text-decoration: none;
@@ -137,7 +146,8 @@ nav a:hover {letter-spacing: 3px;}
 
 hr {
     margin: 40px 0;
-    border: 1px solid var(--text);
+    border: none;
+    border-top: 2px solid var(--text);
     animation: hrAlive cubic-bezier(0.39, 0.575, 0.565, 1) 5s;
 }
 
