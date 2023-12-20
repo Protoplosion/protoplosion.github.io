@@ -13,46 +13,47 @@
     </head>
     <body>
         <canvas id="canvas-background"></canvas>
-        <div id="top">
+        <div id="main">
             <div id="title">
-                <a href="https://youtube.com/@protoplosion"><img src="title.png"></img></a>
+                <a href="https://youtube.com/@protoplosion"><img src="title.png"></a>
             </div>
             <div id="login">
                 <button id="login-btn" onclick="location.href='login/';">Login</button>
             </div>
-        </div>
-        <div id="main">
             <div id="splashbox">
                 <h2 id="splashtext" onclick="newSplash();">404</h2>
             </div>
-            <div id="misc-links">
-                <a class="uthyr" href="uthyr/">Clavis of Uthyr</a>
-                <a class="facility" href="facility/">facilitee timeline</a>
-                <a class="facility-prime" href="facility-prime/">Pioneer Labs Timeline</a>
-            </div>
-            <div id="submain">
-                <button id="youtube" onclick="location.href='https://youtube.com/@protoplosion';">YouTube</button>
-                <button id="twitch" onclick="linkUnavailable('twitch');">Twitch</button>
-                <button id="twitter" onclick="linkUnavailable('twitter');">Twitter</button>
-                <button id="reddit" onclick="linkUnavailable('reddit');">Reddit</button>
-                <hr>
-                <div id="games">
-                    <iframe id="itch" src="https://itch.io/embed/1841695?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/chamber-zero">Chamber: Zero by Protoplosion</a></iframe><br>
-                    <iframe id="itch" src="https://itch.io/embed/1848186?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/decorate-it">Decorate It! by Protoplosion</a></iframe><br>
-                    <iframe id="itch" src="https://itch.io/embed/1211657?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/corrupt">Corrupt by Protoplosion</a></iframe>
-                </div>
-            </div>
+            <table id="submain">
+                <tr>
+                    <td id="nav">
+                        <button id="youtube" onclick="location.href='https://youtube.com/@protoplosion';" onmouseover="keypress();">YouTube</button>
+                        <button id="twitch" onclick="linkUnavailable('twitch');" onmouseover="keypress();">Twitch</button>
+                        <button id="twitter" onclick="linkUnavailable('twitter');" onmouseover="keypress();">Twitter</button>
+                        <button id="reddit" onclick="linkUnavailable('reddit');" onmouseover="keypress();">Reddit</button>
+                        <hr>
+                        <button id="uthyr" onclick="location.href='uthyr/';" onmouseover="keypress();">Clavis of Uthyr</button>
+                        <button id="facility" onclick="location.href='facility/';" onmouseover="keypress();">facilitee timeline</button>
+                        <button id="facility-prime" onclick="location.href='facility-prime/';" onmouseover="keypress();">Pioneer Labs Timeline</button>
+                        <hr>
+                    </td>
+                    <td id="content">
+                        <iframe id="itch" src="https://itch.io/embed/1841695?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/chamber-zero">Chamber: Zero by Protoplosion</a></iframe>
+                        <iframe id="itch" src="https://itch.io/embed/1848186?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/decorate-it">Decorate It! by Protoplosion</a></iframe>
+                        <iframe id="itch" src="https://itch.io/embed/1211657?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/corrupt">Corrupt by Protoplosion</a></iframe>
+                    </td>
+                </tr>
+            </table>
             <div id="field">
                 <p>72616e646f6d2d776562736974652d6d6164652d62792d70726f746f2d686f737465642d6f6e2e6e65746c6966792e617070</p>
             </div>
         </div>
         <div id="cat">
-            <img id="catimg" src="cat.png" onclick="meow();"></img>
+            <img id="catimg" src="cat.png" onclick="meow();">
         </div>
         <div id="hidden">
             <h3 onclick="sup()">sup</h3>
         </div>
-        <img id="tardis" src="tardis.webp" onclick="dematerialise();"></img>
+        <img id="tardis" src="tardis.webp" onclick="dematerialise();">
         <script src="script.js"></script>
     </body>
 </html>

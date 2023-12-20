@@ -216,6 +216,7 @@ function linkUnavailable(btnId) {
     let btn = document.getElementById(btnId)
     btn.disabled = true
     btn.innerHTML = errors[Math.round(Math.random() * (errors.length - 1))]
+    
     setTimeout(function() {
         btn.disabled = false
         switch(btnId) {
@@ -233,8 +234,32 @@ function linkUnavailable(btnId) {
 }
 
 
+function keypress() {
+    let randomKey = Math.round(Math.random() * 4)
+    let audio
+    switch(randomKey) {
+        case 0:
+            audio = new Audio("keypress-01.mp3")
+            break
+        case 1:
+            audio = new Audio("keypress-02.mp3")
+            break
+        case 2:
+            audio = new Audio("keypress-03.mp3")
+            break
+        case 3:
+            audio = new Audio("keypress-04.mp3")
+            break
+        case 4:
+            audio = new Audio("keypress-05.mp3")
+            break
+    }
+    audio.play()
+}
+
+
 function meow() {
-    let audio = new Audio('meow.mp3')
+    let audio = new Audio("meow.mp3")
     audio.play()
 }
 
@@ -243,7 +268,7 @@ let dematerialised = false
 function dematerialise() {
     if (!dematerialised) {
         document.getElementById("tardis").classList.add("dematerialise");
-        let audio = new Audio('dematerialise.mp3')
+        let audio = new Audio("dematerialise.mp3")
         audio.play()
         dematerialised = true
     }
