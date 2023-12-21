@@ -41,6 +41,25 @@ body {
     100% {opacity: 0;}
 }
 
+#wall {
+    background: #000000bb;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#wall button {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 100px;
+    transform: translate(-50%, -50%);
+}
+
 #canvas-background {
     position: fixed;
     top: 0;
@@ -68,14 +87,11 @@ body {
     box-shadow: 0px 0px 10px 0px black;
 }
 
-#title img {
-    width: 100%;
-}
+#title img {width: 100%;}
 
 #login {
     position: absolute;
-    height: 100%;
-    top: -6px;
+    top: 1px;
     right: 6px;
 }
 
@@ -100,7 +116,14 @@ body {
     cursor: url(cursor-splash.png), auto;
 }
 
-#splashtext {cursor: url(cursor-splash.png), auto;}
+#splashtext {
+    font-size: 20px;
+    color: #00ff00;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: url(cursor-splash.png), auto;
+}
 
 #submain {
     margin-top: 20px;
@@ -116,10 +139,7 @@ body {
     vertical-align: top;
 }
 
-#nav table {
-    border-right: 0px;
-    border-collapse: collapse;
-}
+#nav {position: relative;}
 
 hr {
     border: none;
@@ -127,19 +147,54 @@ hr {
     width: 100%;
 }
 
+#keypad {
+    position: absolute;
+    bottom: 0;
+}
+
 #content {width: 100%;}
 
-#itch {
+.itch {
+    background: var(--color1);
     margin: 10px;
     border-width: 4px;
     border-radius: 6px;
     border-style: solid;
     border-color: var(--color4);
-    width: 100%;
-    height: 162px;
-    display: block;
-    transition: width 0.5s;
+    position: relative;
+    height: 143px;
+    text-align: left;
+    display: flex;
 }
+
+.itch div {float: left;}
+
+.vr {
+    border-left: 4px solid var(--color4);
+    height: 100%;
+}
+
+.itch h2 {
+    font-size: 24px;
+    padding: 6px 12px;
+}
+
+.itch p {
+    font-size: 12px;
+    font-weight: 100;
+    padding: 0 12px;
+}
+
+.itch-buttons {
+    border-top: 4px solid var(--color4);
+    position: absolute;
+    bottom: 0;
+    left: 184px;
+}
+
+.itch button {width: 223px;}
+
+#play-on-itch {width: 446px;}
 
 #cat {
     position: absolute;
@@ -162,9 +217,7 @@ hr {
     transition: color 1s ease-in-out;
 }
 
-h3 {
-    cursor: url(cursor-help.png), auto;
-}
+h3 {cursor: url(cursor-help.png), auto;}
 
 #hidden:hover {color: var(--color0);}
 
@@ -176,7 +229,7 @@ h3 {
     height: auto;
     animation: tardisFly linear 3s;
     animation-iteration-count: 1;
-    animation-delay: 10s;
+    animation-delay: 120s;
     z-index: 15;
 }
 
@@ -192,9 +245,7 @@ h3 {
 
 h1 {font-size: 40px;}
 
-
-
-p {
+#field {
     color: #00000000;
     margin: 10px;
     font-size: 10px;
@@ -204,14 +255,6 @@ p {
 a {
     color: var(--color0);
     text-decoration: none;
-}
-
-h2 {
-    font-size: 20px;
-    color: #00ff00;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 button {
@@ -231,7 +274,7 @@ button {
     color: #ffffff;
     white-space: nowrap;
     float: left;
-    transition: background 0.1s ease-in-out, border-color 0.1s ease-in-out;
+    transition: background 0.05s ease-in-out, border-color 0.1s ease-in-out;
 }
 
 button:hover {
@@ -325,3 +368,16 @@ button:hover {
     font-size: 14px;
     font-weight: 100;
 }
+
+.keypad {
+    background: #756464;
+    border-color: #756464;
+    width: 50px;
+}
+
+.keypad:hover {
+    background: #d3bbbb;
+    border-color: #d3bbbb;
+}
+
+.enter {width: 50px;}

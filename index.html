@@ -18,7 +18,7 @@
                 <a href="https://youtube.com/@protoplosion"><img src="title.png"></a>
             </div>
             <div id="login">
-                <button id="login-btn" onclick="location.href='login/';">Login</button>
+                <a id="login-btn" href="login/">Login</a>
             </div>
             <div id="splashbox">
                 <h2 id="splashtext" onclick="newSplash();">404</h2>
@@ -26,20 +26,65 @@
             <table id="submain">
                 <tr>
                     <td id="nav">
-                        <button id="youtube" onclick="location.href='https://youtube.com/@protoplosion';" onmouseover="keypress();">YouTube</button>
-                        <button id="twitch" onclick="linkUnavailable('twitch');" onmouseover="keypress();">Twitch</button>
-                        <button id="twitter" onclick="linkUnavailable('twitter');" onmouseover="keypress();">Twitter</button>
-                        <button id="reddit" onclick="linkUnavailable('reddit');" onmouseover="keypress();">Reddit</button>
+                        <button id="youtube" onclick="location.href='https://youtube.com/@protoplosion';">YouTube</button>
+                        <button id="twitch" onclick="linkUnavailable('twitch');">Twitch</button>
+                        <button id="twitter" onclick="linkUnavailable('twitter');">Twitter</button>
+                        <button id="reddit" onclick="linkUnavailable('reddit');">Reddit</button>
                         <hr>
-                        <button id="uthyr" onclick="location.href='uthyr/';" onmouseover="keypress();">Clavis of Uthyr</button>
-                        <button id="facility" onclick="location.href='facility/';" onmouseover="keypress();">facilitee timeline</button>
-                        <button id="facility-prime" onclick="location.href='facility-prime/';" onmouseover="keypress();">Pioneer Labs Timeline</button>
+                        <button id="uthyr" onclick="location.href='uthyr/';">Clavis of Uthyr</button>
+                        <button id="facility" onclick="location.href='facility/';">facilitee timeline</button>
+                        <button id="facility-prime" onclick="location.href='facility-prime/';">Pioneer Labs Timeline</button>
                         <hr>
+                        <div id="keypad">
+                            <hr>
+                            <button class="keypad" onclick="keypad('7');">7</button><button class="keypad" onclick="keypad('8');">8</button><button class="keypad" onclick="keypad('9');">9</button><button class="keypad" onclick="keypad('*');">*</button>
+                            <button class="keypad" onclick="keypad('4');">4</button><button class="keypad" onclick="keypad('5');">5</button><button class="keypad" onclick="keypad('6');">6</button><button class="keypad" onclick="keypad('-');">-</button>
+                            <button class="keypad" onclick="keypad('1');">1</button><button class="keypad" onclick="keypad('2');">2</button><button class="keypad" onclick="keypad('3');">3</button><button class="keypad" onclick="keypad('+');">+</button>
+                            <button class="keypad" onclick="keypad('0');">0</button><button class="keypad" onclick="keypad('.');">.</button><button class="keypad" onclick="keypad('/');">/</button><button class="enter" onclick="enter();">></button>
+                        </div>
                     </td>
                     <td id="content">
-                        <iframe id="itch" src="https://itch.io/embed/1841695?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/chamber-zero">Chamber: Zero by Protoplosion</a></iframe>
-                        <iframe id="itch" src="https://itch.io/embed/1848186?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/decorate-it">Decorate It! by Protoplosion</a></iframe>
-                        <iframe id="itch" src="https://itch.io/embed/1211657?linkback=true&amp;border_width=0&amp;bg_color=5a3030&amp;fg_color=fff0da&amp;link_color=ff4e56&amp;border_color=e9d5b6"><a href="https://protoplosion.itch.io/corrupt">Corrupt by Protoplosion</a></iframe>
+                        <div class="itch">
+                            <div>
+                                <img src="https://img.itch.zone/aW1nLzEwODA3MDk1LnBuZw==/180x143%23c/X8ldP%2F.png">
+                            </div>
+                            <div class="vr"></div>
+                            <div class="itch-content">
+                                <h2>Chamber: Zero</h2>
+                                <p>You are here to test the Zero Gun. A weapon capable of blasting objects with insane forces!</p>
+                                <div class="itch-buttons">
+                                    <button onclick="window.open('https://protoplosion.itch.io/chamber-zero/purchase?popup=1','popup','width=600,height=600'); return false;">Download Now!</button>
+                                    <button onclick="location.href='https://protoplosion.itch.io/chamber-zero'">View on itch.io</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itch">
+                            <div>
+                                <img src="https://img.itch.zone/aW1nLzEwODQ4MTczLnBuZw==/180x143%23c/inzBnR.png">
+                            </div>
+                            <div class="vr"></div>
+                            <div class="itch-content">
+                                <h2>Decorate It!</h2>
+                                <p>It the day before christmas and you still haven't decorated the tree?! You better get on that!</p>
+                                <div class="itch-buttons">
+                                    <button onclick="window.open('https://protoplosion.itch.io/decorate-it/purchase?popup=1','popup','width=600,height=600'); return false;">Download Now!</button>
+                                    <button onclick="location.href='https://protoplosion.itch.io/decorate-it'">View on itch.io</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itch">
+                            <div>
+                                <img src="https://img.itch.zone/aW1nLzcwNzI1NjIucG5n/180x143%23c/JimC69.png">
+                            </div>
+                            <div class="vr"></div>
+                            <div class="itch-content">
+                                <h2>Corrupt</h2>
+                                <p>It's Undertale but remove everything but the fighting system.</p>
+                                <div class="itch-buttons">
+                                    <button id="play-on-itch" onclick="location.href='https://protoplosion.itch.io/corrupt'">Play on itch.io!</button>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </table>

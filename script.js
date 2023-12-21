@@ -162,6 +162,7 @@ let count = 0
 document.getElementById("splashtext").innerHTML = ""
 
 function newSplash() {
+    refresh = true;
     randomSplash = Math.round(Math.random() * (splashes.length - 1))
     splash = splashes[randomSplash]
     count = 0
@@ -233,28 +234,71 @@ function linkUnavailable(btnId) {
     }, 2000)
 }
 
+window.onload = (function() {
+    var buttons = document.getElementsByTagName("button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onmouseover = function() {
+            let randomKey = Math.round(Math.random() * 4)
+            let audio
+            switch(randomKey) {
+                case 0:
+                    audio = new Audio("keypress-01.mp3")
+                    break
+                case 1:
+                    audio = new Audio("keypress-02.mp3")
+                    break
+                case 2:
+                    audio = new Audio("keypress-03.mp3")
+                    break
+                case 3:
+                    audio = new Audio("keypress-04.mp3")
+                    break
+                case 4:
+                    audio = new Audio("keypress-05.mp3")
+                    break
+            }
+            audio.play()
+        }
+    }
+})
 
-function keypress() {
-    let randomKey = Math.round(Math.random() * 4)
-    let audio
-    switch(randomKey) {
-        case 0:
-            audio = new Audio("keypress-01.mp3")
-            break
-        case 1:
-            audio = new Audio("keypress-02.mp3")
-            break
-        case 2:
-            audio = new Audio("keypress-03.mp3")
-            break
-        case 3:
-            audio = new Audio("keypress-04.mp3")
-            break
-        case 4:
-            audio = new Audio("keypress-05.mp3")
+let refresh = true;
+function keypad(input) {
+    if(refresh) document.getElementById("splashtext").innerHTML = ""
+    refresh = false
+    document.getElementById("splashtext").innerHTML += input;
+    let audio = new Audio('click.mp3')
+    audio.play()
+}
+
+function enter() {
+    refresh = true
+    switch(document.getElementById("splashtext").innerHTML) {
+        case "69": splash = "( ͡° ͜ʖ ͡°)"; break
+        case "1337": splash = "1 11K3 Y0Ur FUNNY W0rD5 M461C M4N!"; break
+        case "666": splash = "THE POWER OF CHRIST COMPELS YOU!"; break
+        case "420": splash = "Whatcha smoking?"; break
+        case "777": splash = "Jesus Christ!"; break
+        case "911": splash = "911, whats the emergancy?"; break
+        case "999": splash = "Which service do you require?"; break
+        case "123456789": splash = "Wooooow... You can count."; break
+        case "9+10": splash = "21!"; break
+        case "0.0": splash = "(⚆o⚆)"; break
+        case "1+1": splash = "3!"; break
+        case "3.1415": splash = "I'd love some!"; break
+        case "0/0": splash = "Fuck you."; break
+        case "58008": splash = "Hehe."; break
+        case "27": splash = "27!"; break
+        case "04": splash = "Do you work for the Battalion?"; break
+        case "02": splash = "The weak ones die. Big deal!"; break
+        default:
+            splash = ""
+            let audio = new Audio('clear.mp3')
+            audio.play()
             break
     }
-    audio.play()
+    document.getElementById("splashtext").innerHTML = ""
+    count = 0
 }
 
 
