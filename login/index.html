@@ -22,7 +22,7 @@
                 <button id="btn" onclick="login()">Login</button>
                 <br><br>
             </div>
-            <h2 id="err"></h2>
+            <h2 id="err">err</h2>
         </div>
         <a id="home" href="/">Protoplosion Foundation</a>
     </body>
@@ -31,6 +31,7 @@
             font-family: "Courier New";
             text-align: center;
             color: #ffffff;
+            user-select: none;
         }
         
         body {
@@ -57,7 +58,7 @@
 
         h2 {
             font-size: 12px;
-            color: #dc3939;
+            color: #dc393900;
         }
         
         #home {
@@ -105,16 +106,20 @@
                 location.href = "https://youtu.be/a3Z7zEc7AXQ";
             } else if(user.value.length == 0 && pass.value.length == 0) {
                 err.innerHTML = "Please put in a username and password";
+                err.style.color = "#dc3939";
             } else if(user.value.length == 0) {
                 err.innerHTML = "Please put in a username";
+                err.style.color = "#dc3939";
             } else if(pass.value.length == 0) {
                 err.innerHTML = "Please put in a password";
+                err.style.color = "#dc3939";
             } else {
                 err.innerHTML = "Incorrect username or password";
+                err.style.color = "#dc3939";
             }
             setTimeout(function() {
                 btn.disabled = false;
-                err.innerHTML = "";
+                err.style.color = "#dc393900";
             }, 2000);
         }
 
