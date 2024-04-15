@@ -66,7 +66,8 @@ const splashes = [
     "Top of the mornin' to ya ladies!",
     "I put my pants on one nipple at a time!",
     "Refresh, I dare you!",
-    "Oh... It's you!",
+    "It's you!",
+    "Despite everything, it's still you!",
     "69!",
     "It's been a long time. How have you been?",
     "I've been really busy being dead. You know, after you MURDERED ME!",
@@ -95,7 +96,7 @@ const splashes = [
     "SKIBIDI BOP MM DADA!",
     "*Anime girl noises intensify*!",
     "Do you ever just-!",
-    "Sususs Amongus!",
+    "Amoonguss!",
     "This message will never appear on the splash screen, isn't that weird?",
     "IS THAT A SUPRA?!",
     "Is that a soup, brah?!",
@@ -103,9 +104,6 @@ const splashes = [
     "youtube.com/LoneWolfGaming04!",
     "Login?!",
     "Where's my anime music when I need it?!",
-    "Look at the little baby!",
-    "Now look at the big baby!",
-    "WAA!",
     "Sub to Protoplosion!",
     "u/PrototypError on Reddit!",
     "Totally cooked him bro!",
@@ -119,7 +117,7 @@ const splashes = [
     "Free from FOXDIE, free from the System, free from ID control!",
     "Engravings, give you no tactical advantage, whatsoever!",
     "RULES OF NATURE!!!!",
-    "122!",
+    "120!",
     "Number 15, could I get the number 15!",
     "It's me!",
     "I'm not a robot!",
@@ -199,7 +197,7 @@ if (!splashSet) {
 
 
 const errors = [
-    "Error",
+    "Error.",
     "Nope!",
     "Can't do!",
     "Nuh Uh.",
@@ -210,7 +208,9 @@ const errors = [
     "Maybe not...",
     "No touch.",
     "Eat dust!",
-    "Be patient."
+    "Be patient.",
+    "Don't click!",
+    "404."
 ]
 
 function linkUnavailable(btnId) {
@@ -275,7 +275,7 @@ function enter() {
     refresh = true
     switch(document.getElementById("splashtext").innerHTML) {
         case "69": splash = "( ͡° ͜ʖ ͡°)"; break
-        case "1337": splash = "1 11K3 Y0Ur FUNNY W0rD5 M461C M4N!"; break
+        case "1337": splash = "1 L1K3 Y0UR FUNNY W0RD5 M461C M4N!"; break
         case "666": splash = "THE POWER OF CHRIST COMPELS YOU!"; break
         case "420": splash = "Whatcha smoking?"; break
         case "777": splash = "Jesus Christ!"; break
@@ -284,13 +284,15 @@ function enter() {
         case "123456789": splash = "Wooooow... You can count."; break
         case "9+10": splash = "21!"; break
         case "0.0": splash = "(⚆o⚆)"; break
+        case "+-+": splash = "(⌐■_■)"; break
         case "1+1": splash = "3!"; break
         case "3.1415": splash = "I'd love some!"; break
         case "0/0": splash = "Fuck you."; break
         case "58008": splash = "Hehe."; break
-        case "27": splash = "27!"; break
+        case "27": splash = "That's weird."; break
         case "04": splash = "Do you work for the Battalion?"; break
-        case "02": splash = "The weak ones die. Big deal!"; break
+        case "02": splash = "Weaklings die. Big deal."; break
+        case "000000": splash = "Double rainbow all the way!"; rainbow(); break
         default:
             splash = ""
             let audio = new Audio('clear.mp3')
@@ -319,10 +321,10 @@ function dematerialise() {
 }
 
 
-let supPressed = false
+let rainbowActive = false
 let hue = 0
-function sup() {
-    if (!supPressed) {
+function rainbow() {
+    if (!rainbowActive) {
         supPressed = true
         setInterval(function () {
             hue++
@@ -352,7 +354,7 @@ setInterval (() => {
     context.fillStyle = "#26191910"
     context.fillRect(0, 0, w, h)
 
-    if (!supPressed) context.fillStyle = "#f00"
+    if (!rainbowActive) context.fillStyle = "#f00"
     else context.fillStyle = "hsl(" + hue + ", 100%, 50%)"
     context.font = "15pt monospace"
     
