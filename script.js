@@ -97,13 +97,14 @@ const splashes = [
     "*Anime girl noises intensify*!",
     "Do you ever just-!",
     "Amoonguss!",
-    "This message will never appear on the splash screen, isn't that weird?",
+    "This message will never appear on the splash screen, isn't that weird?", // It infact, does.
     "IS THAT A SUPRA?!",
     "Is that a soup, brah?!",
     "My friends channel link is somewhere here!",
     "youtube.com/LoneWolfGaming04!",
     "Login?!",
     "Where's my anime music when I need it?!",
+    "..!",
     "Sub to Protoplosion!",
     "u/PrototypError on Reddit!",
     "Totally cooked him bro!",
@@ -150,8 +151,7 @@ const splashes = [
     "Achievement unlocked!",
     "Pet the cat!",
     "Try my games please!",
-    "..!",
-    "That's it!"
+    "16 + 1 + 4 ≠ 51090942171709440000"
 ]
 
 let randomSplash = Math.round(Math.random() * (splashes.length - 1))
@@ -283,16 +283,17 @@ function enter() {
         case "999": splash = "Which service do you require?"; break
         case "123456789": splash = "Wooooow... You can count."; break
         case "9+10": splash = "21!"; break
-        case "0.0": splash = "(⚆o⚆)"; break
-        case "+-+": splash = "(⌐■_■)"; break
+        case "0.0": splash = "( ⚆o⚆)"; break
+        case "+-+": splash = "(✧_✧)"; break
         case "1+1": splash = "3!"; break
-        case "3.1415": splash = "I'd love some!"; break
+        case "3.14": splash = "I'd love some!"; break
         case "0/0": splash = "Fuck you."; break
         case "58008": splash = "Hehe."; break
         case "27": splash = "That's weird."; break
         case "04": splash = "Do you work for the Battalion?"; break
         case "02": splash = "Weaklings die. Big deal."; break
         case "000000": splash = "Double rainbow all the way!"; rainbow(); break
+        case "16+1": splash = "17!"; rainbow(); break
         default:
             splash = ""
             let audio = new Audio('clear.mp3')
