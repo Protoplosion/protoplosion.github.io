@@ -151,7 +151,11 @@ const splashes = [
     "Achievement unlocked!",
     "Pet the cat!",
     "Try my games please!",
-    "16 + 1 + 4 ≠ 51090942171709440000"
+    "16 + 1 + 4 ≠ 51090942171709440000",
+    "It's a terrible day for rain.",
+    "Kabosu was the best boy!",
+    "wow such splash! very fun!",
+    "Kabosu-chan!"
 ]
 
 let randomSplash = Math.round(Math.random() * (splashes.length - 1))
