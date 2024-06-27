@@ -261,6 +261,7 @@ window.onload = (function() {
                     audio = new Audio("keypress-05.mp3")
                     break
             }
+            audio.volume = 0.6
             audio.play()
         }
     }
