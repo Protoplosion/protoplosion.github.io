@@ -179,19 +179,19 @@ if (!splashSet) {
     var splashWrite = setInterval (() => {
         document.getElementById("splashtext").innerHTML += splash.charAt(count)
         count++
-        if(randomSplash >= 30 && randomSplash <= 37) {
-            if(splash.length === count) {
+        if (randomSplash >= 30 && randomSplash <= 37) {
+            if (splash.length === count) {
                 let audio = new Audio('mat-blip-low.mp3')
                 audio.play()
-            } else if(splash.charAt(count) !== "") {
+            } else if (splash.charAt(count) !== "") {
                 let audio = new Audio('mat-blip.mp3')
                 audio.play()
             }
         } else {
-            if(splash.length === count) {
+            if (splash.length === count) {
                 let audio = new Audio('blip-low.mp3')
                 audio.play()
-            } else if(splash.charAt(count) !== "") {
+            } else if (splash.charAt(count) !== "") {
                 let audio = new Audio('blip.mp3')
                 audio.play()
             }
@@ -224,7 +224,7 @@ function linkUnavailable(btnId) {
     
     setTimeout(function() {
         btn.disabled = false
-        switch(btnId) {
+        switch (btnId) {
             case "twitch":
                 btn.innerHTML = "Twitch"
                 break
@@ -244,7 +244,7 @@ window.onload = (function() {
         buttons[i].onmouseover = function() {
             let randomKey = Math.round(Math.random() * 4)
             let audio
-            switch(randomKey) {
+            switch (randomKey) {
                 case 0:
                     audio = new Audio("keypress-01.mp3")
                     break
@@ -269,7 +269,7 @@ window.onload = (function() {
 
 let refresh = true;
 function keypad(input) {
-    if(refresh) document.getElementById("splashtext").innerHTML = ""
+    if (refresh) document.getElementById("splashtext").innerHTML = ""
     refresh = false
     document.getElementById("splashtext").innerHTML += input;
     let audio = new Audio('click.mp3')
@@ -278,7 +278,8 @@ function keypad(input) {
 
 function enter() {
     refresh = true
-    switch(document.getElementById("splashtext").innerHTML) {
+    let audio
+    switch (document.getElementById("splashtext").innerHTML) {
         case "69": splash = "( ͡° ͜ʖ ͡°)"; break
         case "1337": splash = "1 L1K3 Y0UR FUNNY W0RD5 M461C M4N!"; break
         case "666": splash = "THE POWER OF CHRIST COMPELS YOU!"; break
@@ -290,18 +291,34 @@ function enter() {
         case "9+10": splash = "21!"; break
         case "0.0": splash = "( ⚆o⚆)"; break
         case "+-+": splash = "(✧_✧)"; break
+        case "*-*": splash = "(•_•)"; break
         case "1+1": splash = "3!"; break
+        case "2+2": splash = "It's a fish!"; break
         case "3.14": splash = "I'd love some!"; break
         case "0/0": splash = "Fuck you."; break
-        case "58008": splash = "Hehe."; break
+        case "5318008": splash = "Hehe."; break
+        case "0.7734": splash = "Hi!"; break
         case "27": splash = "That's weird."; break
         case "04": splash = "Do you work for the Battalion?"; break
         case "02": splash = "Weaklings die. Big deal."; break
         case "000000": splash = "Double rainbow all the way!"; rainbow(); break
-        case "16+1": splash = "17!"; rainbow(); break
+        case "16+1+4": splash = "Java 21!"; break
+        case "789": splash = "He did?!"; break
+        case "400": splash = "Bad request."; break
+        case "401": splash = "Unauthorized."; break
+        case "402": splash = "Payment required."; break
+        case "403": splash = "Forbidden."; break
+        case "404": splash = "Not found."; break
+        case "418": splash = "I'm a teapot."; break
+        case "502": splash = "Bad gateway."; break
+        case "621": splash = "E!"; break
+        case "707": splash = "Move your body!"; audio = new Audio('707.mp3'); audio.play(); break
+        case "808": splash = "Bust a move!"; audio = new Audio('808.mp3'); audio.play(); break
+        case "909": splash = "Make some noise!"; audio = new Audio('909.mp3'); audio.play(); break
+        case "123": splash = "Incorrect password!"; break
         default:
             splash = ""
-            let audio = new Audio('clear.mp3')
+            audio = new Audio('clear.mp3')
             audio.play()
             break
     }
