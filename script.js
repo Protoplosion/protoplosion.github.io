@@ -385,21 +385,44 @@ const ypos = Array(cols).fill(0)
 
 const chars = splash.replace(/\s|!/g, "")
 
+const randomBackground = Math.round(Math.random() * 2)
+
 setInterval (() => {
     context.fillStyle = "#26191910"
     context.fillRect(0, 0, w, h)
 
-    if (!rainbowActive) context.fillStyle = "#f00"
-    else context.fillStyle = "hsl(" + hue + ", 100%, 50%)"
+    context.fillStyle = "hsl(" + hue + ", 100%, 50%)"
     context.font = "15pt monospace"
-    
+
     ypos.forEach((y, ind) => {
-        const char = chars[Math.floor(Math.random() * chars.length)]
-        
-        const x = ind * 20
-        context.fillText(char, x, y)
-        
-        if (y > 100 + Math.random() * 10000) ypos[ind] = 0
-        else ypos[ind] = y + 20
+        switch (randomBackground) {
+            case 0:
+                const char = chars[Math.floor(Math.random() * chars.length)]
+                
+                const x = ind * 20
+                context.fillText(char, x, y)
+                
+                if (y > 100 + Math.random() * 10000) ypos[ind] = 0
+                else ypos[ind] = y + 20
+
+                break
+            case 1:
+                // in this case, x and y are flipped
+                const x1 = ind * 20
+                context.fillRect(y, x1, 18, 18)
+                
+                if (y > w + Math.random() * 1000000) ypos[ind] = 0
+                else ypos[ind] = y + 20
+
+                break
+            case 2:
+                const x2 = ind * 60
+                context.fillRect(x2, y + h, 60, 10)
+                
+                if (y < -100 + Math.random() * -10000) ypos[ind] = 0
+                else ypos[ind] = y - 10
+
+                break
+        }
     })
 }, 50)
