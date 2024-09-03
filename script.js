@@ -328,6 +328,8 @@ function enter() {
         case "808": splash = "Bust a move!"; audio = new Audio('808.mp3'); audio.play(); break
         case "909": splash = "Make some noise!"; audio = new Audio('909.mp3'); audio.play(); break
         case "123": splash = "Incorrect password!"; break
+        case "321": splash = "Blast off!"; break
+        case "./": splash = "✔"; break
         default:
             splash = ""
             audio = new Audio('clear.mp3')
