@@ -1,10 +1,6 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-family: "Courier New", "Courier", monospace;
-    font-weight: bold;
-    user-select: none;
-    cursor: url(cursor.png), pointer;
+@font-face {
+    font-family: apple;
+    src: url(fonts/PrintChar21.ttf);
 }
 
 :root {
@@ -14,6 +10,15 @@
     --color3: #261919; /*background*/
     --color4: #e9d5b6; /*border colour*/
     --color5: #ff4e56; /*link colour*/
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+    user-select: none;
+    cursor: url(cursor.png), pointer;
 }
 
 body {
@@ -39,6 +44,20 @@ body {
 @keyframes fadeInAnimation {
     0% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color2);
+    box-shadow: inset 0 0 5px var(--color3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color4);
+    border-radius: 10px;
 }
 
 #wall {
@@ -83,7 +102,7 @@ body {
     border-color: var(--color4);
     padding: 12px;
     width: fit-content;
-    height: 60px;
+    height: 70px;
     box-shadow: 0px 0px 10px 0px black;
 }
 
@@ -111,13 +130,15 @@ body {
     border-radius: 6px;
     border-style: double;
     border-color: #008000;
-    padding: 10px;
-    height: 20px;
+    padding: 14px;
+    min-height: 16px;
     cursor: url(cursor-splash.png), auto;
 }
 
 #splashtext {
-    font-size: 20px;
+    font-family: apple;
+    font-size: 16px;
+    font-weight: 100;
     color: #00ff00;
     white-space: nowrap;
     overflow: hidden;

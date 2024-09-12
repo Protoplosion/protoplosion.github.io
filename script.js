@@ -191,21 +191,23 @@ if (!splashSet) {
     var splashWrite = setInterval (() => {
         document.getElementById("splashtext").innerHTML += splash.charAt(count)
         count++
-        if (randomSplash >= 30 && randomSplash <= 37) {
-            if (splash.length === count) {
-                let audio = new Audio('mat-blip-low.mp3')
-                audio.play()
-            } else if (splash.charAt(count) !== "") {
-                let audio = new Audio('mat-blip.mp3')
-                audio.play()
-            }
-        } else {
-            if (splash.length === count) {
-                let audio = new Audio('blip-low.mp3')
-                audio.play()
-            } else if (splash.charAt(count) !== "") {
-                let audio = new Audio('blip.mp3')
-                audio.play()
+        if (splash[count] !== " ") {
+            if (randomSplash >= 30 && randomSplash <= 37) {
+                if (splash.length === count) {
+                    let audio = new Audio('mat-blip-low.mp3')
+                    audio.play()
+                } else if (splash.charAt(count) !== "") {
+                    let audio = new Audio('mat-blip.mp3')
+                    audio.play()
+                }
+            } else {
+                if (splash.length === count) {
+                    let audio = new Audio('blip-low.mp3')
+                    audio.play()
+                } else if (splash.charAt(count) !== "") {
+                    let audio = new Audio('blip.mp3')
+                    audio.play()
+                }
             }
         }
     }, 50)
@@ -277,6 +279,7 @@ window.onload = (function() {
             audio.play()
         }
     }
+    newSplash()
 })
 
 let refresh = true;
@@ -301,8 +304,8 @@ function enter() {
         case "999": splash = "Which service do you require?"; break
         case "123456789": splash = "Wooooow... You can count."; break
         case "9+10": splash = "21!"; break
-        case "0.0": splash = "( ⚆o⚆)"; break
-        case "+-+": splash = "(✧_✧)"; break
+        case "0.0": splash = "( OoO)"; break
+        case "+-+": splash = "(+_+)"; break
         case "*-*": splash = "(•_•)"; break
         case "1+1": splash = "3!"; break
         case "2+2": splash = "It's a fish!"; break
@@ -321,15 +324,32 @@ function enter() {
         case "402": splash = "Payment required."; break
         case "403": splash = "Forbidden."; break
         case "404": splash = "Not found."; break
+        case "405": splash = "Method not allowed."; break
+        case "406": splash = "Not acceptable."; break
+        case "407": splash = "Proxy authentication required."; break
+        case "408": splash = "Request timeout."; break
+        case "409": splash = "Conflict."; break
+        case "410": splash = "Gone."; break
+        case "411": splash = "Length required."; break
+        case "412": splash = "Precondition failed."; break
+        case "413": splash = "Payload too large."; break
+        case "414": splash = "URI too long."; break
+        case "415": splash = "Unsupported media type."; break
+        case "416": splash = "Range not satisfiable."; break
+        case "417": splash = "expectation failed."; break
         case "418": splash = "I'm a teapot."; break
+        case "500": splash = "Internal server error."; break
+        case "501": splash = "Not implemented."; break
         case "502": splash = "Bad gateway."; break
+        case "503": splash = "Service unavailable."; break
+        case "504": splash = "Gateway timeout."; break
         case "621": splash = "E!"; break
         case "707": splash = "Move your body!"; audio = new Audio('707.mp3'); audio.play(); break
         case "808": splash = "Bust a move!"; audio = new Audio('808.mp3'); audio.play(); break
         case "909": splash = "Make some noise!"; audio = new Audio('909.mp3'); audio.play(); break
         case "123": splash = "Incorrect password!"; break
         case "321": splash = "Blast off!"; break
-        case "./": splash = "✔"; break
+        case "./": splash = "x"; break
         default:
             splash = ""
             audio = new Audio('clear.mp3')
