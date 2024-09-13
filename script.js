@@ -96,11 +96,19 @@ window.onload = (function() {
 
 let refresh = true;
 function keypad(input) {
-    if (refresh) splashField.innerHTML = ""
+    if (refresh) {
+        splashField.innerHTML = ""
+        count = splash.length
+    }
     refresh = false
     splashField.innerHTML += input;
     let audio = new Audio('click.mp3')
     audio.play()
+}
+
+// Allows for invalid characters for JSON files to go through.
+function regExp (str) {
+    return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
 }
 
 function enter() {
@@ -108,7 +116,7 @@ function enter() {
     let audio
     let codeMatches = false
     for (let i = 0; i < codes[0].length; i++) {
-        if (splashField.innerHTML.match(codes[0][i])) {
+        if (splashField.innerHTML === codes[0][i]) {
             splash = codes[1][i]
             switch (codes[0][i]) {
                 case "000000": rainbow(); break
@@ -117,6 +125,7 @@ function enter() {
                 case "909": audio = new Audio('909.mp3'); audio.play(); break
             }
             codeMatches = true
+            break
         }
     }
     if (!codeMatches) {

@@ -225,7 +225,7 @@ hr {
 }
 
 #catimg {
-    cursor: url(hand.png), auto;
+    cursor: url(hand.png) 16 16, auto;
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -296,16 +296,16 @@ button {
     color: #ffffff;
     white-space: nowrap;
     float: left;
-    transition: background 0.05s ease-in-out, border-color 0.1s ease-in-out;
-    cursor: url(cursor-pointer1.png) 6 0, pointer;
+    cursor: url(cursor-pointer1.png) 6 2, pointer;
     animation: cursor 400ms infinite;
+    transition: background 0.05s ease-in-out, border-color 0.1s ease-in-out;
 }
 
 @keyframes cursor {
-    10% {cursor: url(cursor-pointer2.png) 6 0, pointer;}
-    50% {cursor: url(cursor-pointer3.png) 6 0, pointer;}
-    60% {cursor: url(cursor-pointer4.png) 6 0, pointer;}
-    85% {cursor: url(cursor-pointer2.png) 6 0, pointer;}
+    10% {cursor: url(cursor-pointer2.png) 6 2, pointer;}
+    50% {cursor: url(cursor-pointer3.png) 6 2, pointer;}
+    60% {cursor: url(cursor-pointer4.png) 6 2, pointer;}
+    85% {cursor: url(cursor-pointer2.png) 6 2, pointer;}
 }
 
 button:hover {
