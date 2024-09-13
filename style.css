@@ -1,6 +1,6 @@
 @font-face {
-    font-family: apple;
-    src: url(fonts/PrintChar21.ttf);
+    font-family: retron;
+    src: url(fonts/Retron2000.ttf);
 }
 
 :root {
@@ -130,13 +130,13 @@ body {
     border-radius: 6px;
     border-style: double;
     border-color: #008000;
-    padding: 14px;
-    min-height: 16px;
+    padding: 12px;
+    min-height: 24px;
     cursor: url(cursor-splash.png), auto;
 }
 
 #splashtext {
-    font-family: apple;
+    font-family: retron;
     font-size: 16px;
     font-weight: 100;
     color: #00ff00;
@@ -296,6 +296,15 @@ button {
     white-space: nowrap;
     float: left;
     transition: background 0.05s ease-in-out, border-color 0.1s ease-in-out;
+    cursor: url(cursor-pointer1.png) 6 0, pointer;
+    animation: cursor 400ms infinite;
+}
+
+@keyframes cursor {
+    10% {cursor: url(cursor-pointer2.png) 6 0, pointer;}
+    50% {cursor: url(cursor-pointer3.png) 6 0, pointer;}
+    60% {cursor: url(cursor-pointer4.png) 6 0, pointer;}
+    85% {cursor: url(cursor-pointer2.png) 6 0, pointer;}
 }
 
 button:hover {
