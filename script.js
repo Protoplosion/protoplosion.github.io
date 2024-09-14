@@ -48,7 +48,7 @@ function linkUnavailable(btnId) {
     btn.disabled = true
     btn.innerHTML = errors[Math.round(Math.random() * (errors.length - 1))]
     
-    setTimeout(function() {
+    setTimeout(() => {
         btn.disabled = false
         switch (btnId) {
             case "twitch":
@@ -64,10 +64,10 @@ function linkUnavailable(btnId) {
     }, 2000)
 }
 
-window.onload = (function() {
+window.onload = (() => {
     var buttons = document.getElementsByTagName("button");
     for (var i = 0; i < buttons.length; i++) {
-        buttons[i].onmouseover = function() {
+        buttons[i].onmouseover = () => {
             let randomKey = Math.round(Math.random() * 4)
             let audio
             switch (randomKey) {
@@ -120,6 +120,8 @@ function enter() {
             splash = codes[1][i]
             switch (codes[0][i]) {
                 case "000000": rainbow(); break
+                case "360": roll(); break
+                case "404": location.href = "404/"; break
                 case "707": audio = new Audio('707.mp3'); audio.play(); break
                 case "808": audio = new Audio('808.mp3'); audio.play(); break
                 case "909": audio = new Audio('909.mp3'); audio.play(); break
@@ -161,13 +163,20 @@ let hue = 0
 function rainbow() {
     if (!rainbowActive) {
         supPressed = true
-        setInterval(function () {
+        setInterval(() => {
             hue++
             let hsl = "hsl(" + hue + ", 100%, 50%)"
             splashField.style.color = hsl
             document.getElementById("splashbox").style.borderColor = hsl
         }, 1)
     }
+}
+
+function roll() {
+    document.body.classList.add("doABarrelRoll")
+    setTimeout(() => {
+        document.body.classList.remove("doABarrelRoll")
+    }, 4000)
 }
 
 
@@ -189,7 +198,7 @@ const randomBackground = Math.round(Math.random() * 2)
 
 let waifuActive = false
 const waifu = new Image()
-waifu.src = "test.jpg"
+waifu.src = "test.webp"
 
 setInterval (() => {
     if (splash.match("Yes master?") || waifuActive) {

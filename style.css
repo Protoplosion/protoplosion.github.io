@@ -23,7 +23,7 @@
 
 body {
     background-color: #ff0000;
-    background-image: url("vignette.png");
+    background-image: url("vignette.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -42,8 +42,19 @@ body {
 }
 
 @keyframes fadeInAnimation {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+.doABarrelRoll {
+    animation: roll 4s 1;
+    -moz-animation: roll 4s 1;
+    -webkit-animation: roll 4s 1;
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
 }
 
 ::-webkit-scrollbar {
@@ -106,7 +117,7 @@ body {
     box-shadow: 0px 0px 10px 0px black;
 }
 
-#title img {width: 100%;}
+#title img { width: 100% }
 
 #login {
     position: absolute;
@@ -161,7 +172,7 @@ body {
     box-shadow: 0px 0px 10px 0px black;
 }
 
-#nav {position: relative;}
+#nav { position: relative }
 
 hr {
     border: none;
@@ -174,7 +185,7 @@ hr {
     bottom: 0;
 }
 
-#content {width: 100%;}
+#content { width: 100% }
 
 .itch {
     background: var(--color1);
@@ -189,7 +200,7 @@ hr {
     display: flex;
 }
 
-.itch div {float: left;}
+.itch div { float: left }
 
 .vr {
     border-left: 4px solid var(--color4);
@@ -214,9 +225,9 @@ hr {
     left: 184px;
 }
 
-.itch button {width: 223px;}
+.itch button { width: 223px }
 
-#play-on-itch {width: 446px;}
+#play-on-itch { width: 446px }
 
 #cat {
     position: absolute;
@@ -229,19 +240,19 @@ hr {
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#catimg:hover {transform: translateX(350px);}
+#catimg:hover { transform: translateX(350px) }
 
 #hidden {
-    color: var(--color3);
+    color: #00000000;
     position: fixed;
     bottom: 8px;
     right: 10px;
     transition: color 1s ease-in-out;
 }
 
-h3 {cursor: url(cursor-help.png), auto;}
+h3 { cursor: url(cursor-help.png), auto }
 
-#hidden:hover {color: var(--color0);}
+#hidden:hover { color: var(--color0) }
 
 #tardis {
     position: fixed;
@@ -261,11 +272,11 @@ h3 {cursor: url(cursor-help.png), auto;}
 }
 
 @keyframes tardisFly {
-    0% {top: 20%; left: -10%;}
-    100% {top: 60%; left: 100%;}
+    0% { top: 20%; left: -10% }
+    100% { top: 60%; left: 100% }
 }
 
-h1 {font-size: 40px;}
+h1 { font-size: 40px }
 
 #field {
     color: #00000000;
@@ -302,10 +313,10 @@ button {
 }
 
 @keyframes cursor {
-    10% {cursor: url(cursor-pointer2.png) 6 2, pointer;}
-    50% {cursor: url(cursor-pointer3.png) 6 2, pointer;}
-    60% {cursor: url(cursor-pointer4.png) 6 2, pointer;}
-    85% {cursor: url(cursor-pointer2.png) 6 2, pointer;}
+    10% { cursor: url(cursor-pointer2.png) 6 2, pointer }
+    50% { cursor: url(cursor-pointer3.png) 6 2, pointer }
+    60% { cursor: url(cursor-pointer4.png) 6 2, pointer }
+    85% { cursor: url(cursor-pointer2.png) 6 2, pointer }
 }
 
 button:hover {
@@ -367,15 +378,16 @@ button:hover {
     border-color: #ff5700;
 }
 
+.nav-btn {
+    padding: 0 6px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 100;
+}
+
 @font-face {
     font-family: uthyr;
     src: url(uthyr/fonts/stowe-titling/STOWE___.otf);
-}
-
-#uthyr {
-    font-family: uthyr;
-    font-size: 20px;
-    font-weight: 100;
 }
 
 @font-face {
@@ -383,22 +395,19 @@ button:hover {
     src: url(facility/fonts/cyberdyne/cyberdyne.ttf);
 }
 
-#facility {
-    font-family: facility;
-    font-size: 14px;
-    font-weight: 100;
-}
-
 @font-face {
     font-family: facility-prime;
     src: url(facility-prime/fonts/bugaki/Bugaki.ttf);
 }
 
-#facility-prime {
-    font-family: facility-prime;
-    font-size: 14px;
-    font-weight: 100;
+#uthyr {
+    font-family: uthyr;
+    font-size: 20px;
 }
+
+#facility { font-family: facility }
+
+#facility-prime { font-family: facility-prime }
 
 .keypad {
     background: #756464;
@@ -411,4 +420,4 @@ button:hover {
     border-color: #d3bbbb;
 }
 
-.enter {width: 50px;}
+.enter { width: 50px }
