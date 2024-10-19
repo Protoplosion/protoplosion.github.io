@@ -91,7 +91,6 @@ window.onload = (() => {
             audio.play()
         }
     }
-    newSplash()
 })
 
 let refresh = true;
@@ -106,11 +105,6 @@ function keypad(input) {
     audio.play()
 }
 
-// Allows for invalid characters for JSON files to go through.
-function regExp (str) {
-    return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
-}
-
 function enter() {
     refresh = true
     let audio
@@ -119,6 +113,7 @@ function enter() {
         if (splashField.innerHTML === codes[0][i]) {
             splash = codes[1][i]
             switch (codes[0][i]) {
+                case "0/0": explode(); break
                 case "000000": rainbow(); break
                 case "360": roll(); break
                 case "404": location.href = "404/"; break
@@ -150,13 +145,22 @@ function meow() {
 let dematerialised = false
 function dematerialise() {
     if (!dematerialised) {
-        document.getElementById("tardis").classList.add("dematerialise");
+        document.getElementById("tardis").classList.add("dematerialise")
         let audio = new Audio("dematerialise.mp3")
         audio.play()
         dematerialised = true
     }
 }
 
+function explode() {
+    document.querySelectorAll("div").forEach(element => {
+        element.classList.add("exploding")
+    })
+    let white = document.createElement("div")
+    white.classList.add("white")
+    document.body.appendChild(white)
+    white.parentNode.insertBefore(white, white.parentNode.firstChild)
+}
 
 let rainbowActive = false
 let hue = 0
