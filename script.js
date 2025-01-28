@@ -45,23 +45,19 @@ if (!splashSet) {
 
 function linkUnavailable(btnId) {
     let btn = document.getElementById(btnId)
+    let label = btn.innerHTML
     btn.disabled = true
     btn.innerHTML = errors[Math.round(Math.random() * (errors.length - 1))]
     
     setTimeout(() => {
         btn.disabled = false
-        switch (btnId) {
-            case "twitch":
-                btn.innerHTML = "Twitch"
-                break
-            case "twitter":
-                btn.innerHTML = "Twitter"
-                break
-            case "reddit":
-                btn.innerHTML = "Reddit"
-                break
-        }
+        btn.innerHTML = label
     }, 2000)
+}
+
+function unavailable() {
+    let audio = new Audio('clear.mp3')
+    audio.play()
 }
 
 window.onload = (() => {
