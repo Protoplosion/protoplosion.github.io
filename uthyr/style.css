@@ -27,7 +27,7 @@ body {
     background-image: url(background.jpg);
     background-repeat: repeat;
     background-attachment: fixed;
-    background-size: 50%;
+    background-size: 900px;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -73,7 +73,7 @@ body {
     background-size: 100%;
     margin: auto;
     padding: 0;
-    max-width: 820px;
+    max-width: 1120px;
     height: fit-content;
     box-shadow: 0px 0px 10px 0px black;
     overflow: hidden;
